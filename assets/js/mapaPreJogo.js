@@ -95,17 +95,14 @@ function arrastaMapa(e){
 	var offset = { x : mapaArea.x - e.stageX };
 
 		e.onMouseMove = function(ev) {
-			
-			if(ev.nativeEvent.webkitMovementX > 0){
+
 				if(mapaArea.x <= 450){
 					mapaArea.x = ev.stageX + offset.x;
 				} else { mapaArea.x = 450;}
-			}
-			else if(ev.nativeEvent.webkitMovementX < 0){
+
 				if(mapaArea.x >= -450){
 					mapaArea.x = ev.stageX + offset.x;
 				} else { mapaArea.x = -450;}
-			}
 			
 		};
 	

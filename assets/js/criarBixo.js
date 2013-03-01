@@ -119,9 +119,9 @@ function initPos_criar(){
 	raboUp.x = 314; raboUp.y = 185;
 	cbaUp.x = 523; cbaUp.y = 185;
 	
-	crpDown.y -= 2; crpDown.x = crpUp.x;
-	cbaDown.y -= 2; cbaDown.x = cbaUp.x;
-	raboDown.y -= 2; raboDown.x = raboUp.x;
+	crpDown.y = 335; crpDown.x = crpUp.x;
+	cbaDown.y = 335; cbaDown.x = cbaUp.x;
+	raboDown.y = 335; raboDown.x = raboUp.x;
 	
 	//Funcoes que chamam o callback do click nos botoes EXCLUSIVO DO CRIAR MEU BICHO
 	retornar_bttn.onPress = 
