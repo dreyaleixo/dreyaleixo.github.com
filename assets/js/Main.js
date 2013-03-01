@@ -61,9 +61,7 @@ function main() {
 	//MANIFESTO PARA OS ASSETS DO LOADING
 	manifest = [
 
-					{src:"assets/bg/Patucara_carregando1.png", id:"carregando1"},
-					{src:"assets/bg/Patucara_carregando2.png", id:"carregando2"},
-					{src:"assets/bg/Patucara_carregando3.png", id:"carregando3"},
+					{src:"assets/bg/Carregando.gif", id:"carregando1"},
 					
 				];
 	
@@ -163,8 +161,10 @@ function main() {
 				
 				//Coisas do mapa que serao utilizadas antes do jogo comecar
 
-				{src:"assets/mapaPreGame/mapa.png", id:"mapa_bg"},
-				{src:"assets/mapaPreGame/entrar.png", id:"enterZoo"},
+				{src:"assets/images/mapaPreGame/mapa.png", id:"mapa_bg"},
+				{src:"assets/images/mapaPreGame/entrar.png", id:"enterZoo"},
+				{src:"assets/images/mapaPreGame/bussola.png", id:"bussola"},
+				{src:"assets/images/mapaPreGame/plaquinha_mapa.png", id:"plaquinha_mapa"},
 
 				//Imagens do Criar Meu Bicho
 

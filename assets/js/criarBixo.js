@@ -15,6 +15,7 @@ var prep = 0;
 var prep2 = 0;
 var flagFazer = 0;
 var ambNum;
+var telaCriar = new createjs.Shape();
 
 //Funcao main do Criar Meu Bicho
 function criarBixo_main(){
@@ -52,14 +53,28 @@ function criarBixo_main(){
 							cursor);
 	
 	underScale(criarInterface);
-	criarInterface.removeChild( avcCriar_bttn_press,
+	criarInterface.removeChild( crpDown, crpUp,
+							cbaDown, cbaUp,
+							raboDown, raboUp,
+							avcCriar_bttn,
+							avcCriar_bttn_press,
+							retornar_bttn,
 							retornar_bttn_press,
+							criarVoltar_bttn,
 							criarVoltar_bttn_press,
+							frameCriar,
 							cursor);
 	
 	criarInterface.addChild(imprimeBttn,
 						salvaBttn,
 						animal_atual,
+						frameCriar,
+						crpDown, crpUp,
+						cbaDown, cbaUp,
+						raboDown, raboUp,
+						avcCriar_bttn,
+						retornar_bttn,
+						criarVoltar_bttn,
 						animal_montando,
 						ambNum,
 						cursor);
@@ -88,6 +103,7 @@ function criarAtualiza(){
 		animal_atual.x = 150;
 		animal_atual.y = 465;
 	}
+
 }
 
 //Funcao que organiza os botoes e posicoes do criarBixo
@@ -221,8 +237,19 @@ function handleClick_criar(e){
 			}
 			som_bttn_menu.stop();
 			som_bttn_menu.play();
-			criarBixo_main();
-			
+			animal_atual.rotation = 350;
+			animal_atual.x = 150;
+			animal_atual.y = 465;
+			criarArea.removeAllChildren();
+			criarArea.addChild(ambCriar,
+								animal_atual,
+								criarInterface);
+			criarArea.y = 0;
+			gZona(contador);
+			ambCriar.getChildAt(contador).scaleY = 1;
+			ambCriar.getChildAt(contador).scaleX = 1;
+			ambCriar.y = 150;
+			frameImprimir.y = 0;
 		break;
 	
 	}
@@ -350,16 +377,23 @@ function arrumaAnimal(e){
 	this.sombra_.scaleX = 1.4;
 	this.sombra_.alpha = 0.4;
 	
+	this.cloneAnimal = new createjs.Container();
+	this.cloneAnimal = animal_atual.clone(true);
+	
 	criarArea.removeAllChildren();
 	criarArea.addChild( zcAlvos_,
 						ambCriar,
 						sombra_,
 						animal_atual,
+						cloneAnimal,
 						frameImprimir);
 	
 	animal_atual.x = sombra_.x;
 	animal_atual.y = sombra_.y - 50;
 	animal_atual.rotation = 0;
+	
+	cloneAnimal.x = 115;
+	cloneAnimal.y = 525;
 	
 	ambCriar.getChildAt(contador).scaleY = 1.1;
 	ambCriar.getChildAt(contador).scaleX = 1.1;
@@ -371,13 +405,12 @@ function arrumaAnimal(e){
 	
 	criarArea.y = -100;
 	frameImprimir.y += 430;
-	
-	telaCriar = new createjs.Shape();
+
 	telaCriar.graphics.beginFill("black").rect(0,0,canvas.width,canvas.height);
 	telaCriar.alpha = 0.01;
 	telaCriar.id = "telaCriar";
 	telaCriar.onClick = handleClick_criar;
-	
+
 	criarArea.addChild(telaCriar);
 	flagFazer = e;
 	

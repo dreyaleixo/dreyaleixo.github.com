@@ -222,6 +222,7 @@ function confereAnimal(ev){
 				completos_.removeChildAt(ambAtivo);
 				completos_.addChildAt(animal_atual, ambAtivo);
 				completouAnimal = true;
+				setaScala = true;
 				if(ambientes_.getChildAt(ambAtivo).ambAnimal != 2
 					&& ambientes_.getChildAt(ambAtivo).ambAnimal != 6
 					&& ambientes_.getChildAt(ambAtivo).ambAnimal != 8){

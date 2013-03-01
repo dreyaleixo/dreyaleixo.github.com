@@ -93,13 +93,19 @@ function montaTuto(){
 	tutoArea.removeAllChildren();
 	tutoAtual = 0;
 	tutos_.getChildAt(tutoAtual).alpha = 1;
-	stage.getChildAt(0).onTick = null;
 	stage.getChildAt(0).removeChild(cursor);
 	tutoArea.addChild(pauseOverlay);
 	stage.addChild(tutoArea);
 	tutoArea.onTick = pauseAtualiza;
-	pauseOverlay.onMouseOver = function(){ };
-	pauseOverlay.onClick = function(){ };
+	pauseOverlay.onMouseOver = function(){ return; };
+	pauseOverlay.onClick = function(){ return; };
+	
+	//Texto do Tutorial
+	tutoNums = (tutoAtual+1);
+	tutoQnt = new createjs.Text( tutoNums + "      4", "20px CCCLTS", "#000000");
+	tutoQnt.x = 416;
+	tutoQnt.y = 505;
+	tutoQnt.textBaseline = "alphabetic";
 	
 	tutoArea.addChild(tuto_screen, tutos_, tuto_prev_bttn, tuto_prev_bttn_press, tuto_next_bttn, tuto_next_bttn_press);
 	tuto_prev_bttn.y = 495;
@@ -109,12 +115,6 @@ function montaTuto(){
 	tuto_next_bttn.onPress =
 		tuto_prev_bttn.onPress = handleClick;
 	underScale(tutoArea);
-	
-	tutoNums = (tutoAtual+1);
-	tutoQnt = new createjs.Text( tutoNums + "      4", "20px CCCLTS", "#000000");
-	tutoQnt.x = 416;
-	tutoQnt.y = 505;
-	tutoQnt.textBaseline = "alphabetic";
 	
 	tutoArea.removeChild(tuto_prev_bttn_press, tuto_next_bttn_press);
 	tutoArea.addChild(tiraTuto, tutoQnt, cursor);

@@ -18,6 +18,9 @@ var patucara_sprite;
 var ss;
 var patucara;
 var completouAnimal = false;
+var setaScala = false;
+var tempoRestante = 180;
+var gameScaler = 0.005;
 
 //Containeres do Menu e da interface
 var pauseMenu = new createjs.Container();
@@ -127,6 +130,32 @@ function zooGame(){
 //FUNCAO QUE ATUALIZA A CADA TICK DO STAGE, DEFINIDO PELA CLASSE TICKER DO CREATEJS
 function atualiza(){
 	
+	if(completos_.getChildAt(ambAtivo).ambOrig >= 0){
+		
+			if(ambPrev.scaleX >= 0.54 || ambNext.scaleX >= 0.54){
+				
+				setaScala = -0.005;
+				
+			} else if(ambPrev.scaleX <= 0.44 || ambNext.scaleX <= 0.44){
+				
+				setaScala = 0.005;
+			}
+			
+			ambNext.scaleX += setaScala;
+			ambNext.scaleY += setaScala;
+			ambPrev.scaleX += setaScala;
+			ambPrev.scaleY += setaScala;
+			
+			
+	} else {
+		
+		ambNext.scaleX = 0.44;
+		ambNext.scaleY = 0.44;
+		ambPrev.scaleX = 0.44;
+		ambPrev.scaleY = 0.44;
+		
+	}
+	
 	if(completouAnimal){
 		
 		if(balao_patu.alpha == 0.0001){
@@ -163,9 +192,9 @@ function atualiza(){
 	}
 	
 	//Calcula o tempo do jogo
-	if(tempoDecorrido <= 180){
+	if(tempoDecorrido <= tempoRestante){
 		
-		b.scaleY = 1 - ( 0.006 * tempoDecorrido);
+		b.scaleY = 1 - ( (1/tempoRestante) * tempoDecorrido);
 		
 	} else { chamaPerdeuJogo(); }
 	
@@ -226,6 +255,9 @@ function atualiza(){
 //Funcao que atualiza o pauseArea
 function pauseAtualiza(){
 	
+	//Alinha o texto de lose
+	textLose.x =  (canvas.width/2) - (textLose.getMeasuredWidth()/2);
+	
 	//Faz o cursor custom seguir o mouse
 	cursor.x = stage.mouseX + cursor.regX - 20;
 	cursor.y = stage.mouseY + cursor.regY - 20;
@@ -237,6 +269,7 @@ function pauseAtualiza(){
 //Funcoes de Win/Lose do jogo
 function chamaPerdeuJogo(){
 	
+	loseGame.removeAllChildren();
 	gameCaixa.onTick = null;
 	gameCaixa.removeChild(cursor);
 	loseGame.addChild(pauseOverlay);
@@ -245,19 +278,28 @@ function chamaPerdeuJogo(){
 	pauseOverlay.onMouseOver = function(){ };
 	pauseOverlay.onClick = function(){ };
 	
+	if(animais_completos > 0){
+		
+		textLose.text = "Parabens! Voce completou "+animais_completos+" bichos";
+		textLose.y =  canvas.height/2;
+		
+	} else {
+	
+		textLose.text = "Que pena! Voce nao conseguiu completar nenhum bicho!";
+		textLose.y =  canvas.height/2;
+		
+	}
+	
 	loseGame.addChild(derrota_pop, ok_bttn, ok_bttn_press);
 	derrota_pop.x = canvas.width/2;
 	derrota_pop.y = canvas.height/2;
-	ok_bttn.y = 447;
+	ok_bttn.y = 432;
 	ok_bttn.x = 450;
 	underScale(loseGame);
 	loseGame.removeChild(ok_bttn_press);
-	loseGame.addChild(voltaMenu, cursor);
-	voltaMenu.x = 735;
-	voltaMenu.y = 110;
+	loseGame.addChild(textLose, cursor);
 	
-	voltaMenu.onPress =
-		ok_bttn.onPress = handleClick; 
+	ok_bttn.onPress = handleClick; 
 	
 	createjs.Sound.stop("som_erro");
 	createjs.Sound.play("som_erro");
@@ -293,6 +335,8 @@ function chamaGanhouLevel(){
 
 	createjs.Sound.stop("som_acerto");
 	createjs.Sound.play("som_acerto");
+	
+	tempoRestante -= 10;
 	
 	
 }

@@ -1,7 +1,7 @@
 /*
 
 
-		Mapa que vai ser aberto quando o jogador clica em Jogar
+q		Mapa que vai ser aberto quando o jogador clica em Jogar
 			Andrey Pereira Aleixo
 
 
@@ -12,6 +12,7 @@ var mapaArea = new createjs.Container();
 var mapa_bg;
 var enterZoo;
 var setasMapa = new createjs.Container();
+var scaler = 0.005;
 
 //Funcao principal do script
 function mapaPreJogo(){
@@ -20,23 +21,17 @@ function mapaPreJogo(){
 	mapaArea.removeAllChildren();
 	stage.enableMouseOver();
 	
-	enterZoo.alpha = 0.01;
-	enterZoo.x = 1140;
+	enterZoo.alpha = 1;
+	enterZoo.x = 480;
 	enterZoo.y = 610;
 	
-	mapaArea.addChild(mapa_bg, enterZoo);
+	mapaArea.addChild(mapa_bg, enterZoo, plaquinha_mapa, bussola);
 	underScale(mapaArea);
-	stage.addChild(mapaArea, setasMapa, cursor);
+	mapaArea.removeChild(plaquinha_mapa, bussola);
+	stage.addChild(mapaArea, setasMapa, plaquinha_mapa, bussola, cursor);
 	
 	mapa_bg.onPress = arrastaMapa;
-	mapaArea.x = 450;
-	
-	enterZoo.onMouseOver = function (e) {
-		e.target.alpha = 1;
-		e.target.onMouseOut = function (evt){
-			evt.target.alpha = 0.01;
-		};
-	};
+	mapaArea.x = 0;
 	
 	enterZoo.onClick = function (e) {
 		
@@ -56,6 +51,12 @@ function mapaPreJogo(){
 	ambNext.x = canvas.width - 20;
 	ambNext.rotation = 180;
 	ambPrev.x = 20;
+	
+	plaquinha_mapa.y = 585;
+	plaquinha_mapa.x = 150;
+	
+	bussola.x = 150;
+	bussola.y = 85;
 	
 }
 
@@ -84,6 +85,21 @@ function mapaUpdate(){
 			setasMapa.addChild(ambNext);
 		}
 	}
+	
+	if(enterZoo.scaleX >= 0.54 && enterZoo.scaleY >= 0.54){
+		
+		scaler = -0.005;
+		
+	}
+	
+	if(enterZoo.scaleX <= 0.44 && enterZoo.scaleY <= 0.44){
+		
+		scaler = 0.005; 
+		
+	}
+	
+	enterZoo.scaleX += scaler; 
+	enterZoo.scaleY += scaler;
 	
 }
 

@@ -9,7 +9,6 @@
 var totalLoaded = 0;
 var carregando1, carregando2, carregando3;
 var loaders = new createjs.Container();
-var loadNum = 0;
 
 //Funcao que carrega o manifesto "m" e carrega os arquivos.
 function callPreload(m){
@@ -22,14 +21,11 @@ function callPreload(m){
 function handleProgress(event){
 		
 	//Tela de Load
-	if(carregando3 != null){
+	if(carregando1 != null
+		&& !loadCaixa.contains(carregando1)){
 		
-		if(!loaders.contains(carregando1)){
-			loaders.addChild(carregando1, carregando2, carregando3);
-			underScale(loaders);
-		}
-		
-		loadCaixa.addChild(loaders.getChildAt(loadNum));
+		loadCaixa.addChild(carregando1);
+		underScale(loadCaixa);
 		stage.addChild(loadCaixa);
 		
 	}
@@ -41,7 +37,7 @@ function handleComplete(event){
 		stage.removeAllChildren();
 		
 		//Se a quantidade de arquivos carregados eh igual ao tamanho do manifesto, chama o menu
-		if((m.length + 3) == totalLoaded){
+		if((m.length + 1) == totalLoaded){
 			
 					chamaMenu();
 					this.totalLoaded = 0;
@@ -53,19 +49,7 @@ function handleComplete(event){
 function handleLoadComplete(event){
 	
 	totalLoaded++;
-	if(carregando3 != null){
-		
-		if(loadNum == 3){
-			
-			loadNum = 0;
-			loadCaixa.removeChildAt(0);
-		}
-		
-		loadCaixa.addChild(loaders.getChildAt(loadNum));
-		loadNum ++;
-		
-	}
-	
+
 }
 
 //Funcao que trabalha com o carregamento de arquivos

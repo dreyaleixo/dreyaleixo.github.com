@@ -94,7 +94,11 @@ function initGame_vars(){
 	b.y = 640;
 	b.rotation = 0;
 	b.regX = 25;
-	b.regY = 60;
+	b.regY = 60; 
+	
+	//Texto de lose
+	textLose = new createjs.Text( "Que pena! Você não conseguiu completar nenhum bicho!" , "24px CCZOINKS", "#000000");
+	textLose.textBaseline = "alphabetic";
 	
 	//POSICIONAMENTO DO CONTROLE DO MONSTRO
 	this.raboUp.x = canvas.width/2 - 140;

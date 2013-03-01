@@ -26,7 +26,7 @@ var Canvas2Image = (function() {
 	var bHasDataURL = !!(oCanvas.toDataURL);
 	var bHasBase64 = !!(window.btoa);
 
-	var strDownloadMime = "image/octet-stream";
+	var strDownloadMime = "image/png";
 
 	// ok, we're good
 	var readCanvasData = function(oCanvas) {
@@ -146,7 +146,8 @@ var Canvas2Image = (function() {
 	// sends the generated file to the client
 	var saveFile = function(strData) {
 		console.log(strData);
-		document.location.href = strData;
+		window.open(strData, '_blank', "height=675,width=900");
+		  window.focus();
 	}
 
 	var makeDataURI = function(strData, strMime) {
