@@ -145,6 +145,7 @@ var Canvas2Image = (function() {
 
 	// sends the generated file to the client
 	var saveFile = function(strData) {
+		console.log(strData);
 		document.location.href = strData;
 	}
 

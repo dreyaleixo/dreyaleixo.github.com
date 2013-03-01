@@ -82,6 +82,12 @@ function criarAtualiza(){
 	cursor.scaleX = cursor.scaleY = 0.7;
 	
 	ambNum.text = (contador + 1) + " / 10";
+	
+	if(criarArea.contains(retornar_bttn)){
+		animal_atual.rotation = 350;
+		animal_atual.x = 150;
+		animal_atual.y = 465;
+	}
 }
 
 //Funcao que organiza os botoes e posicoes do criarBixo
@@ -122,6 +128,8 @@ function initPos_criar(){
 	crpDown.y = 335; crpDown.x = crpUp.x;
 	cbaDown.y = 335; cbaDown.x = cbaUp.x;
 	raboDown.y = 335; raboDown.x = raboUp.x;
+	
+	animal_montando.y = -5;
 	
 	//Funcoes que chamam o callback do click nos botoes EXCLUSIVO DO CRIAR MEU BICHO
 	retornar_bttn.onPress = 
@@ -225,7 +233,7 @@ function handleClick_criar(e){
 function salvaImagem(){
 	
 	var oCanvas = document.getElementById("cnvs");
-	Canvas2Image.saveAsJPEG(oCanvas);
+	Canvas2Image.saveAsPNG(oCanvas);
 	
 }
 
@@ -351,6 +359,7 @@ function arrumaAnimal(e){
 	
 	animal_atual.x = sombra_.x;
 	animal_atual.y = sombra_.y - 50;
+	animal_atual.rotation = 0;
 	
 	ambCriar.getChildAt(contador).scaleY = 1.1;
 	ambCriar.getChildAt(contador).scaleX = 1.1;
