@@ -11,6 +11,7 @@
 var cursor;
 
 //Container do Tutorial
+var tituloCaixa = new createjs.Container();
 var tutoArea = new createjs.Container();
 var tutos_ = new createjs.Container();
 var tutoAtual = 0;
@@ -42,9 +43,9 @@ function chamaMenu(){
 	tutos_.x = 252;
 	
 	//Adiciona os items do main menu no palco e manda o palco atualizar
-	this.tituloCaixa.addChild(bgImg, jogar_bttn, criarBixo_bttn, comoJogar_bttn);
+	tituloCaixa.addChild(bgImg, jogar_bttn, criarBixo_bttn, comoJogar_bttn);
 	underScale(tituloCaixa, cursor);
-	this.stage.update();
+	stage.update();
 	
 	//Inicia a Musica
 	mainMusic.stop();
