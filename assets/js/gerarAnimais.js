@@ -199,6 +199,7 @@ function gerarAtual(){
 	}	
 	
 	if(!stage.contains(criarArea)){
+			animal_atual.rotation = 0;
 		interface_.addChild(animal_atual);
 	}
 }

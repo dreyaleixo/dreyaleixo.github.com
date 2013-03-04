@@ -17,7 +17,7 @@ function handleClick(e){
 				if(interface_.contains(bgmoff_bttn)){
 					som_bttn_menu.stop();
 					som_bttn_menu.play();
-					bg_musicitc.play();
+					mainMusic.play();
 						interface_.removeChild(bgmoff_bttn);
 						interface_.addChild(bgmon_bttn);
 						tkr_old = tkr;
@@ -25,7 +25,7 @@ function handleClick(e){
 				else if(interface_.contains(bgmon_bttn)){
 					som_bttn_menu.stop();
 					som_bttn_menu.play();
-					bg_musicitc.stop();
+					mainMusic.stop();
 						interface_.removeChild(bgmon_bttn);
 						interface_.addChild(bgmoff_bttn);
 						tkr_old = tkr;
@@ -38,14 +38,14 @@ function handleClick(e){
 			if(interface_.contains(sfxoff_bttn)){
 				som_bttn_menu.stop();
 				som_bttn_menu.play();
-				createjs.Sound.setVolume(0.1);
+				Howler.unmute();
 					interface_.removeChild(sfxoff_bttn);
 					interface_.addChild(sfxon_bttn);
 			}
 			else if(interface_.contains(sfxon_bttn)){
 				som_bttn_menu.stop();
 				som_bttn_menu.play();
-				createjs.Sound.setVolume(0);
+				Howler.mute();
 					interface_.removeChild(sfxon_bttn);
 					interface_.addChild(sfxoff_bttn);
 			}
@@ -55,7 +55,7 @@ function handleClick(e){
 		//
 		//-----------------------------------------------------
 		
-		//Como Jogar
+		//Criar Bixo
 		case "criarBixo_bttn":
 			e.target.image.src = criarBixo_bttn_press.image.src;
 			som_bttn_menu.stop();
@@ -332,6 +332,7 @@ function chamaPause(){
 	pauseArea.onTick = pauseAtualiza;
 	pauseOverlay.onMouseOver = function(){ };
 	pauseOverlay.onClick = function(){ };
+	mainMusic.pause();
 	
 }
 
@@ -347,5 +348,6 @@ function chamaPlay(){
 	pauseOverlay.onClick = null;
 	tempoAntigo = tempoDecorrido;
 	timeOffset = Math.floor(Math.floor(createjs.Ticker.getTime()));
+	mainMusic.play();
 	
 }

@@ -14,6 +14,7 @@ var cursor;
 var tutoArea = new createjs.Container();
 var tutos_ = new createjs.Container();
 var tutoAtual = 0;
+var textLose = new createjs.Text();
 
 //Funcao que vai chamar o menu quando todos os arquivos do manifesto estiverem carregados
 function chamaMenu(){
@@ -47,8 +48,8 @@ function chamaMenu(){
 	this.stage.update();
 	
 	//Inicia a Musica
-	createjs.Sound.setVolume(0.1);
-	bg_musicitc = createjs.Sound.play("bg_music", createjs.Sound.INTERRUPT_ANY, 0, 0, -1);
+	mainMusic.stop();
+	mainMusic.play();
 	
 	this.jogar_bttn.x = canvas.width /2;
 	this.jogar_bttn.y = 370;

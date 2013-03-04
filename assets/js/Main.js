@@ -207,47 +207,7 @@ function main() {
 				
 			];
 	
-		//Arquivos de Som
-		soundManifest = [
-			{src:"assets/sounds/musics/1-tema-zoologico-patucara.mp3|assets/sounds/musics/1-tema-zoologico-patucara.ogg", id:"bg_music"},
-			
-			{src:"assets/sounds/sfx/bode.ogg|assets/sounds/sfx/bode.mp3", id:"som_bode"},
-			{src:"assets/sounds/sfx/botao-menu.ogg|assets/sounds/sfx/botao-menu.mp3", id:"som_bttn_menu"},
-			{src:"assets/sounds/sfx/botao-selecao-animais.ogg|assets/sounds/sfx/botao-selecao-animais.mp3", id:"som_troca_animal"},
-			{src:"assets/sounds/sfx/camelo.ogg|assets/sounds/sfx/camelo.mp3", id:"som_camelo"},
-			{src:"assets/sounds/sfx/foca.ogg|assets/sounds/sfx/foca.mp3", id:"som_foca"},
-			{src:"assets/sounds/sfx/leao.ogg|assets/sounds/sfx/leao.mp3", id:"som_leao"},
-			{src:"assets/sounds/sfx/crocodilo.ogg|assets/sounds/sfx/crocodilo.mp3", id:"som_croc"},
-			{src:"assets/sounds/sfx/macaco.ogg|assets/sounds/sfx/macaco.mp3", id:"som_macaco"},
-			{src:"assets/sounds/sfx/pavao.ogg|assets/sounds/sfx/pavao.mp3", id:"som_pavao"},
-			{src:"assets/sounds/sfx/peixe.ogg|assets/sounds/sfx/peixe.mp3", id:"som_peixe"},
-			{src:"assets/sounds/sfx/rinoceronte.ogg|assets/sounds/sfx/rinoceronte.mp3", id:"som_rino"},
-			{src:"assets/sounds/sfx/tela-deslizando.ogg|assets/sounds/sfx/tela-deslizando.mp3", id:"som_deslize"},
-			{src:"assets/sounds/sfx/tucano.ogg|assets/sounds/sfx/tucano.mp3", id:"som_tucano"},
-			
-			//Sons de acerto e erro
-			{src:"assets/sounds/sfx/som-acerto.ogg|assets/sounds/sfx/som-acerto.mp3", id:"som_acerto"},
-			{src:"assets/sounds/sfx/som-erro.ogg|assets/sounds/sfx/som-erro.mp3", id:"som_erro"},
-		];
-		createjs.Sound.registerManifest(soundManifest);
-		
-	//Instances dos Sons
-
-	som_bttn_menu = createjs.Sound.play("som_bttn_menu");
-	som_troca_animal = createjs.Sound.play("som_troca_animal");
-	som_deslize = createjs.Sound.play("som_deslize");
-	som_acerto = createjs.Sound.play("som_acerto");
-	som_erro = createjs.Sound.play("som_erro");
-	som_bode = createjs.Sound.play("som_bode");
-	som_camelo = createjs.Sound.play("som_camelo");
-	som_foca = createjs.Sound.play("som_foca");
-	som_leao = createjs.Sound.play("som_leao");
-	som_croc = createjs.Sound.play("som_croc");
-	som_macaco = createjs.Sound.play("som_macaco");
-	som_pavao = createjs.Sound.play("som_pavao");
-	som_peixe = createjs.Sound.play("som_peixe");
-	som_rino = createjs.Sound.play("som_rino");
-	som_tucano = createjs.Sound.play("som_tucano"),
+	initSounds();
 	
 	callPreload(manifest);
 	
