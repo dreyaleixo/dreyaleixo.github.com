@@ -19,7 +19,7 @@ function callPreload(m){
 //Funcao que vai trabalhar enquanto os arquivos estao sendo carregados
 function handleProgress(event){
 		
-
+	$("#progressBar").html(Math.ceil((preloader.progress * 100)) + "%");
 }
 
 //Funcao que eh ativada quando todos os arquivos sao carregados
@@ -29,6 +29,7 @@ function handleComplete(event){
 	
 	//Tira o div do Load
 	$(".loadImg").hide();
+	$("#progressBar").hide();
 	
 }
 

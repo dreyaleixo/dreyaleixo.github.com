@@ -71,19 +71,13 @@ function initGame_vars(){
 	this.ambAtivos.y = canvas.height - 330;
 	
 	//BOTOES DE CONTROLE DO AMBIENTE
-	this.ambNext.x = canvas.width - 30;
+	this.ambNext.x = canvas.width - 45;
 	this.ambNext.y = canvas.height/2 + 90;
-	this.ambNext_hit.x = canvas.width - 30;
+	this.ambNext_hit.x = canvas.width - 45;
 	this.ambNext_hit.y = canvas.height/2 + 90;
 	this.ambNext_hit.alpha = 0.01;
 	this.ambNext.rotation = 180;
-	this.ambPrev.x = 30;
-	this.ambPrev.y = canvas.height/2+ 90;
-	this.ambPrev_hit.x = 30;
-	this.ambPrev_hit.y = canvas.height/2+ 90;
-	this.ambPrev.rotation = 0;
-	this.ambPrev_hit.alpha = 0.01;
-	this.ambPrev_hit.onClick = this.ambNext_hit.onClick = handleClick;
+	this.ambNext_hit.onClick = handleClick;
 	
 	//Testando o timer
 	g = new createjs.Graphics();

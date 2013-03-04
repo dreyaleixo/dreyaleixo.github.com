@@ -252,7 +252,6 @@ function confereAnimal(ev){
 				}
 				this.animal_atual = new createjs.Container(); 
 				animais_completos++;
-				gerarMontando();
 				this.animal_atual.onPress = arrastaMonstro;
 				this.animal_atual.onMouseOver = maoCursor_ativa;
 				this.animal_atual.onMouseOut = maoCursor_desativa;
@@ -282,7 +281,9 @@ function trocaRabo(idx, i){
 	this.rM.scaleX = this.rM.scaleY = 0.3;
 	animal_montando.addChildAt(rM, 0);
 
-	gerarAtual();
+	if(gameCaixa.contains(animal_atual)){
+		gerarAtual();
+	}
 	
 }
 
@@ -302,7 +303,9 @@ function trocaCorpo(idx, i){
 	this.bM.scaleX = this.bM.scaleY = 0.3;
 	animal_montando.addChildAt(bM, 1);
 
-	gerarAtual();
+	if(gameCaixa.contains(animal_atual)){
+		gerarAtual();
+	}
 	
 }
 
@@ -321,8 +324,10 @@ function trocaCabeca(idx, i){
 	this.cM.y = ((cbaUp.y + cbaDown.y) /2) + 30;
 	this.cM.scaleX = this.cM.scaleY = 0.3;
 	animal_montando.addChildAt(cM, 2);
-
-	gerarAtual();
+	
+	if(gameCaixa.contains(animal_atual)){
+		gerarAtual();
+	}
 	
 }
 

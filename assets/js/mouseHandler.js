@@ -168,22 +168,11 @@ function handleClick(e){
 				
 				createjs.Tween.get(moveArea).to({x: ( moveArea.x - 900)}, 1200, createjs.Ease.circOut);
 				ambAtivo ++;
-				
+				gerarMontando();
 			}
+			interface_.removeChild(ambNext, ambNext_hit);
 		break;
-		
-		case "ambPrev_hit":
-			som_deslize.stop();
-			som_deslize.play();
-			if(ambAtivo == 0) { break; }
-			if((createjs.Tween.hasActiveTweens()) == 0){
-				
-				createjs.Tween.get(moveArea).to({x: ( moveArea.x + 900)}, 1200, createjs.Ease.circOut);
-				ambAtivo --;
-				
-			}
-			
-		break;
+
 		
 		//Casos das telas de Win e Lose do jogo
 		//LOSE
@@ -192,7 +181,7 @@ function handleClick(e){
 			som_bttn_menu.play();
 			srcold = ok_bttn.image.src;
 			ok_bttn.image.src = ok_bttn_press.image.src;
-			e.onMouseUp = function(e){ ok_bttn.image.src = srcold; chamaMenu(); };
+			e.onMouseUp = function(e){ ok_bttn.image.src = srcold; zooGame(); timeOffset = Math.floor(createjs.Ticker.getTime());};
 		break;
 		
 		//X DA JANELA 
@@ -208,7 +197,8 @@ function handleClick(e){
 			som_bttn_menu.play();
 			srcold = sim_bttn.image.src;
 			sim_bttn.image.src = sim_bttn_press.image.src;
-			e.onMouseUp = function(e){ sim_bttn.image.src = srcold; _dificuldade++; zooGame(); timeOffset = Math.floor(createjs.Ticker.getTime()); };
+			e.onMouseUp = function(e){ sim_bttn.image.src = srcold; _dificuldade++; zooGame(); timeOffset = Math.floor(createjs.Ticker.getTime()); 
+			mainMusic.play(); };
 		break;
 		
 		case "nao_bttn":

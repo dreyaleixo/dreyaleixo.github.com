@@ -82,7 +82,7 @@ function zooGame(){
 	tempoDecorrido = 0;
 	animais_completos = 0;
 	tempoAntigo = 0;
-	
+
 	initSheets();
 	initGame_vars();
 	
@@ -91,8 +91,6 @@ function zooGame(){
 							ambAtivos,
 							pause_bttn,
 							duvida_bttn,
-							ambPrev, ambNext,
-							ambPrev_hit, ambNext_hit,
 							duvida_hit,
 							crpDown, crpUp, cbaDown, cbaUp, raboDown, raboUp);
 	
@@ -132,31 +130,33 @@ function atualiza(){
 	
 	if(completos_.getChildAt(ambAtivo).ambOrig >= 0){
 		
-			if(ambPrev.scaleX >= 0.54 || ambNext.scaleX >= 0.54){
+			if(ambNext.scaleX >= 0.84){
 				
-				setaScala = -0.005;
+				setaScala = -0.02;
 				
-			} else if(ambPrev.scaleX <= 0.44 || ambNext.scaleX <= 0.44){
+			} else if(ambNext.scaleX <= 0.44){
 				
-				setaScala = 0.005;
+				setaScala = 0.02;
 			}
 			
 			ambNext.scaleX += setaScala;
 			ambNext.scaleY += setaScala;
-			ambPrev.scaleX += setaScala;
-			ambPrev.scaleY += setaScala;
 			
 			
 	} else {
 		
 		ambNext.scaleX = 0.44;
 		ambNext.scaleY = 0.44;
-		ambPrev.scaleX = 0.44;
-		ambPrev.scaleY = 0.44;
 		
 	}
 	
 	if(completouAnimal){
+		
+		if(!interface_.contains(ambNext)){
+			
+			interface_.addChild(ambNext); interface_.addChild(ambNext_hit);
+			
+		}
 		
 		if(balao_patu.alpha == 0.0001){
 			
@@ -209,17 +209,19 @@ function atualiza(){
 	// ------------------------ //
 	
 	//Mostra a seta para onde o animal deve ser arrastado assim que ele combinar com o animal alvo
-	if(alvos_.getChildAt(ambAtivo).getChildAt(0).spriteSheet._images == animal_atual.getChildAt(0).spriteSheet._images
-		&& alvos_.getChildAt(ambAtivo).getChildAt(1).spriteSheet._images == animal_atual.getChildAt(1).spriteSheet._images
-		&& alvos_.getChildAt(ambAtivo).getChildAt(2).spriteSheet._images == animal_atual.getChildAt(2).spriteSheet._images
-		&& completos_.getChildAt(ambAtivo).ambOrig == -1){
-							moveArea.addChild(seta_ss);
-							seta_ss.y = zonasAlvo_.getChildAt(ambAtivo).y;
-							seta_ss.x = zonasAlvo_.getChildAt(ambAtivo).x;
-							if(seta_ss.currentAnimation != "set"){
-								seta_ss.gotoAndPlay("set");
-							}
-			} else { moveArea.removeChild(seta_ss); }
+	if(gameCaixa.contains(animal_atual)){
+		if(alvos_.getChildAt(ambAtivo).getChildAt(0).spriteSheet._images == animal_atual.getChildAt(0).spriteSheet._images
+			&& alvos_.getChildAt(ambAtivo).getChildAt(1).spriteSheet._images == animal_atual.getChildAt(1).spriteSheet._images
+			&& alvos_.getChildAt(ambAtivo).getChildAt(2).spriteSheet._images == animal_atual.getChildAt(2).spriteSheet._images
+			&& completos_.getChildAt(ambAtivo).ambOrig == -1){
+								moveArea.addChild(seta_ss);
+								seta_ss.y = zonasAlvo_.getChildAt(ambAtivo).y;
+								seta_ss.x = zonasAlvo_.getChildAt(ambAtivo).x;
+								if(seta_ss.currentAnimation != "set"){
+									seta_ss.gotoAndPlay("set");
+								}
+				} else { moveArea.removeChild(seta_ss); }
+	}
 	
 	//Animacao do Patucara
 	if ( (createjs.Ticker.getTicks() % 200) == 0){
@@ -228,13 +230,16 @@ function atualiza(){
 		
 	}
 
-	//Animacao aleatoria do animal atual
-	if ( (createjs.Ticker.getTicks() % 90) == 0){
-		
-		animAnimaisA_random(ambAtivo, animal_atual);
+	if(gameCaixa.contains(animal_atual)){
+	
+		//Animacao aleatoria do animal atual
+		if ( (createjs.Ticker.getTicks() % 90) == 0){
+			
+			animAnimaisA_random(ambAtivo, animal_atual);
+			
+		}
 		
 	}
-		
 	//Animacao aleatoria dos animais Completos
 	if ( (createjs.Ticker.getTicks() % 70) == 0){
 			
@@ -244,10 +249,6 @@ function atualiza(){
 		}
 	
 	ajustaPlacas(ambAtivo);
-	
-	//Faz com que os botoes que avancam e retornam sumam caso nao seja possivel ir na direcao desejada
-	if(ambAtivo == 0) { interface_.removeChild(ambPrev); interface_.removeChild(ambPrev_hit); } else { interface_.addChild(ambPrev); interface_.addChild(ambPrev_hit); }
-	if(ambAtivo == (_dificuldade - 1)) { interface_.removeChild(ambNext); interface_.removeChild(ambNext_hit); } else { interface_.addChild(ambNext); interface_.addChild(ambNext_hit); }
 	
 	
 }
@@ -278,15 +279,23 @@ function chamaPerdeuJogo(){
 	pauseOverlay.onMouseOver = function(){ };
 	pauseOverlay.onClick = function(){ };
 	
-	if(animais_completos > 0){
+	if(animais_completos == 1 || animais_completos == 2){
 		
-		textLose.text = "Parabens! Voce completou "+animais_completos+" bicho";
-		if(animais_completos > 1){
+		textLose.text = "Que pena! Voc completou s— "+animais_completos+" bicho";
+		if(animais_completos == 2){
 			textLose.text += "s";
 		}
 		textLose.y =  canvas.height/2;
 		
-	} else {
+	} 
+	
+	else if(animais_completos > 2){
+		
+		textLose.text = "Parabens! Voce completou "+animais_completos+" bichos";
+		textLose.y =  canvas.height/2;
+		
+	} 
+	else {
 	
 		textLose.text = "Que pena! Voce nao conseguiu completar nenhum bicho!";
 		textLose.y =  canvas.height/2;
@@ -341,7 +350,8 @@ function chamaGanhouLevel(){
 	som_acerto.stop();
 	som_acerto.play();
 	
-	tempoRestante -= 10;
-	
+	if(tempoRestante > 120){
+		tempoRestante -= 10;
+	}
 	
 }
