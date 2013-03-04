@@ -430,7 +430,7 @@ function initSheets(){
 				tucano_rbo.off_crpY = -5; 
 				
 		//Seta alvo para mostrar onde os animais sao colocados
-				seta_sheet ={"animations": { "set": { frames : [ 0, 0, 0, 0, 1, 1, 2, 2, 3, 3]} },
+				seta_sheet ={"animations": { "set": { frames : [ 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3]} },
 						"images": [seta_Spritesheet.image.src],
 						"frames": {"regX": (seta_Spritesheet.image.width/4)/2, "height": seta_Spritesheet.image.height, "regY": seta_Spritesheet.image.height, "width": seta_Spritesheet.image.width/4}};
 						ss = new createjs.SpriteSheet(seta_sheet);
