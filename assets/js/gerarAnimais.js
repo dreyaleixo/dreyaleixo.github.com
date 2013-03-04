@@ -281,7 +281,7 @@ function trocaRabo(idx, i){
 	this.rM.scaleX = this.rM.scaleY = 0.3;
 	animal_montando.addChildAt(rM, 0);
 
-	if(gameCaixa.contains(animal_atual)){
+	if(gameCaixa.contains(animal_atual) || criarArea.contains(animal_atual)){
 		gerarAtual();
 	}
 	
@@ -303,7 +303,7 @@ function trocaCorpo(idx, i){
 	this.bM.scaleX = this.bM.scaleY = 0.3;
 	animal_montando.addChildAt(bM, 1);
 
-	if(gameCaixa.contains(animal_atual)){
+	if(gameCaixa.contains(animal_atual) || criarArea.contains(animal_atual)){
 		gerarAtual();
 	}
 	
@@ -325,7 +325,7 @@ function trocaCabeca(idx, i){
 	this.cM.scaleX = this.cM.scaleY = 0.3;
 	animal_montando.addChildAt(cM, 2);
 	
-	if(gameCaixa.contains(animal_atual)){
+	if(gameCaixa.contains(animal_atual) || criarArea.contains(animal_atual)){
 		gerarAtual();
 	}
 	
