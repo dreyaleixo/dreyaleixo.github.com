@@ -145,8 +145,8 @@ var Canvas2Image = (function() {
 
 	// sends the generated file to the client
 	var saveFile = function(strData) {
-		console.log(strData);
-		window.open(strData, '_blank', "height=675,width=900");
+		console.log(strData + ".png");
+		window.open(strData + ".png", '_blank', "height=675,width=900");
 		  window.focus();
 	}
 

@@ -281,7 +281,7 @@ function chamaPerdeuJogo(){
 	
 	if(animais_completos == 1 || animais_completos == 2){
 		
-		textLose.text = "Que pena! Você completou só "+animais_completos+" bicho";
+		textLose.text = "Que pena! Voce completou so "+animais_completos+" bicho";
 		if(animais_completos == 2){
 			textLose.text += "s";
 		}
