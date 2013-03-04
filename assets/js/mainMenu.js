@@ -32,7 +32,6 @@ function chamaMenu(){
 	
 	stage.removeAllChildren();
 	tituloCaixa.removeAllChildren();
-	createjs.Sound.stop();
 	_dificuldade = 3;
 	
 	tutos_.removeAllChildren();

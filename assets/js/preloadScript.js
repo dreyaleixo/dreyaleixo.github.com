@@ -37,7 +37,7 @@ function handleComplete(event){
 		stage.removeAllChildren();
 		
 		//Se a quantidade de arquivos carregados eh igual ao tamanho do manifesto, chama o menu
-		if((m.length + 1) == totalLoaded){
+		if((m.length) == totalLoaded){
 			
 					chamaMenu();
 					this.totalLoaded = 0;

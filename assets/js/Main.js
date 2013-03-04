@@ -43,11 +43,6 @@ function main() {
 	stage.mouseEventsEnabled = true;
 	stage.enableMouseOver();
 	
-	createjs.FlashPlugin.BASE_PATH = "assets/libs/";
-	createjs.Sound.registerPlugins([createjs.WebAudioPlugin, createjs.HTMLAudioPlugin, createjs.FlashPlugin]);
-	createjs.Sound.registerPlugins([createjs.WebAudioPlugin, createjs.FlashPlugin]);
-	 
-	
 	//Preloader, que sera utilizado para carregar todos os arquivos e instalar o plugin de som
 	preloader = new createjs.PreloadJS();
 	preloader.installPlugin(createjs.Sound);
@@ -67,7 +62,7 @@ function main() {
 	
 	callPreload(manifest);
 	
-	manifest = [
+	manifest1 = [
 				//Sheets de todos os animais e do Patucara
 				
 				{src:"assets/images/sheets/patucara_Spritesheet.png", id:"patucara_sheet"},
@@ -209,7 +204,7 @@ function main() {
 	
 	initSounds();
 	
-	callPreload(manifest);
+	callPreload(manifest1);
 	
 	//Ticker do FPS que sera utilizado para controlar a velocidade do jogo
 	createjs.Ticker.setFPS(30);
