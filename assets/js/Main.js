@@ -198,7 +198,7 @@ function main() {
 	initSounds();
 	
 	//Ticker do FPS que sera utilizado para controlar a velocidade do jogo
-	createjs.Ticker.setFPS(30);
+	createjs.Ticker.setFPS(60);
 	createjs.Ticker.addListener(stage);
 	
 }
