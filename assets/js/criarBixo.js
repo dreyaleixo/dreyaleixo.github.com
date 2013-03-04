@@ -233,6 +233,7 @@ function handleClick_criar(e){
 				window.print();
 			} 
 			if(flagFazer == -1){
+
 				salvaImagem();
 			}
 			som_bttn_menu.stop();

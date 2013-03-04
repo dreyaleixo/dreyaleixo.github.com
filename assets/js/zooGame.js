@@ -280,7 +280,10 @@ function chamaPerdeuJogo(){
 	
 	if(animais_completos > 0){
 		
-		textLose.text = "Parabens! Voce completou "+animais_completos+" bichos";
+		textLose.text = "Parabens! Voce completou "+animais_completos+" bicho";
+		if(animais_completos > 1){
+			textLose.text += "s";
+		}
 		textLose.y =  canvas.height/2;
 		
 	} else {
@@ -301,8 +304,9 @@ function chamaPerdeuJogo(){
 	
 	ok_bttn.onPress = handleClick; 
 	
-	createjs.Sound.stop("som_erro");
-	createjs.Sound.play("som_erro");
+	mainMusic.stop();
+	som_erro.stop();
+	som_erro.play();
 	
 }
 
@@ -333,8 +337,9 @@ function chamaGanhouLevel(){
 		sim_bttn.onPress =
 		nao_bttn.onPress = handleClick;
 
-	createjs.Sound.stop("som_acerto");
-	createjs.Sound.play("som_acerto");
+	mainMusic.stop();
+	som_acerto.stop();
+	som_acerto.play();
 	
 	tempoRestante -= 10;
 	

@@ -191,7 +191,7 @@ function main() {
 				//Dummy para nao buggar quando o pc carrega arquivos muito rapidos
 				{src:"assets/images/botao_pausar.png", id:"dummy_pause"}
 				
-			];
+			];	
 	
 	callPreload(manifest);
 
