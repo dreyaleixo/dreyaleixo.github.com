@@ -55,7 +55,7 @@ function mapaPreJogo(){
 	plaquinha_mapa.y = 585;
 	plaquinha_mapa.x = 150;
 	
-	bussola.x = 150;
+	bussola.x = 100;
 	bussola.y = 85;
 	
 }

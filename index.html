@@ -18,12 +18,17 @@ Codigo html sendo utilizado para testes do jogo Zoologico do Patucara
  			font-family: CCZOINKS;
   			src: url(assets/fonts/CCZOINKS.TTF);
 		}
+		.loadImg img {
+			height: 675px;
+			width: 900px;
+		}
 		</style>
 		<script src="assets/libs/easeljs-0.5.0.min.js"></script>
 		<script src="assets/libs/tweenjs-0.3.0.min.js"></script>
 		<script src="assets/libs/preloadjs-0.2.0.min.js"></script>
 		<script src="assets/libs/howler.js"></script>
 		<script src="assets/libs/canvas2image.js"></script>
+		<script src="assets/libs/jquery-1.9.1.min.js"></script>
 		<script src="assets/libs/base64.js"></script>
 		<!-- Scripts do Jogo  -->
 		<script src="assets/js/Main.js"></script>
@@ -39,9 +44,17 @@ Codigo html sendo utilizado para testes do jogo Zoologico do Patucara
 		<script src="assets/js/gerarAmbientes.js"></script>
 		<script src="assets/js/animHandler.js"></script>
 		<script src="assets/js/initGame_vars.js"></script>
+		<script type ="text/javascript">
+		
+		$(document).ready(function(){
+			$(".loadImg").show()
+		})
+		
+		</script>
 	</head>
 
 	<body onload="main();">
+		<div class="loadImg"><img src="assets/bg/Carregando.gif"></img></div>
 		<canvas style="cursor:none;" id="cnvs" width="900" height="675">Este browser nao suporta html5, tente usar um alternativo. </canvas>
 	</body>
 </html>
