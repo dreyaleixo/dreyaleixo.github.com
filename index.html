@@ -1,99 +1,28 @@
-<!--
-
-Codigo html sendo utilizado para testes do jogo Zoologico do Patucara
-	Andrey Pereira Aleixo
-
--->
-
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="chrome=1">
-		<title>Zoologico do Patucara</title>
-		<style>
-		@font-face {
- 			font-family: CCCLTS;
-  			src: url(assets/fonts/CCCLTS__.TTF);
-		}
-		@font-face {
- 			font-family: CCZOINKS;
-  			src: url(assets/fonts/CCZOINKS.TTF);
-		}
-		.loadImg img {
-			height: 675px;
-			width: 900px;
-			position : fixed;
-			top : 2px;
-			left : 2px;
-		}
-		.canvas {
-			cursor : none;
-			position : fixed;
-			top : 2px;
-			left : 2px;
-		}
-		#progressBar {
-			height: 675px;
-			width: 900px;
-			position : fixed;
-			top : 386 ;
-			font-size : 36px;
-			text-align : center;
-			font-family : CCCLTS;
-			color : #3C2C12;
-			z-index:999;
-		}
+		<title>Tem Crianca na Cozinha</title>
 		
-		</style>
-		<script src="assets/libs/easeljs-0.5.0.min.js"></script>
-		<script src="assets/libs/tweenjs-0.3.0.min.js"></script>
-		<script src="assets/libs/preloadjs-0.2.0.min.js"></script>
+		<script src="assets/libs/easeljs-0.6.0.min.js"></script>
+		<script src="assets/libs/tweenjs-0.4.0.min.js"></script>
+		<script src="assets/libs/preloadjs-0.3.0.min.js"></script>
 		<script src="assets/libs/howler.js"></script>
-		<script src="assets/libs/canvas2image.js"></script>
 		<script src="assets/libs/jquery-1.9.1.min.js"></script>
-		<script src="assets/libs/base64.js"></script>
-		<!-- Scripts do Jogo  -->
-		<script src="assets/js/Main.js"></script>
-		<script src="assets/js/initSounds.js"></script>
-		<script src="assets/js/initSheets.js"></script>
-		<script src="assets/js/mainMenu.js"></script>
-		<script src="assets/js/mapaPreJogo.js"></script>
-		<script src="assets/js/criarBixo.js"></script>
-		<script src="assets/js/zooGame.js"></script>
-		<script src="assets/js/preloadScript.js"></script>
-		<script src="assets/js/mouseHandler.js"></script>
-		<script src="assets/js/gerarAnimais.js"></script>
-		<script src="assets/js/gerarAmbientes.js"></script>
-		<script src="assets/js/animHandler.js"></script>
-		<script src="assets/js/initGame_vars.js"></script>
-		<script type ="text/javascript">
+		<!--  Scripts do Jogo -->
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/game.js"></script>
+		<script src="assets/js/preloader.js"></script>
+		<script src="assets/js/keyHandler.js"></script>
 		
-		$(document).ready(function(){
-			$(".progressBar").show();
-			$(".loadImg").show();
-		})
-		
-		</script>
-		<script type="text/javascript">
-
-		  window.analytics_game_name = "zoologicodopatucara"	
-		
-		  var _gaq = _gaq || [];
-		  _gaq.push(['_setAccount', 'UA-30071506-3']);
-		  _gaq.push(['_trackPageview']);
-		
-		  (function() {
-		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		  })();
-		
-		</script>
+		<style type="text/css">
+			* {margin: 0;}
+			div {width: 1024px; height: 768px; border: 1px solid black; margin: 0 auto;}
+		</style>
 	</head>
-	
-	<body onload="main();">
-		<div class="loadImg"><img src="assets/bg/Carregando.gif"></img></div>
-		<canvas class= "canvas" id="cnvs" width="900" height="675">Este browser nao suporta html5, tente usar um alternativo. </canvas>
-		<div id="progressBar"></div>
+	<body onload="preload();">
+		<div>
+			<canvas id="canvas" width="900" height="675">Este browser nao suporta html5, tente usar um alternativo.</canvas>
+		</div>
 	</body>
 </html>
-
