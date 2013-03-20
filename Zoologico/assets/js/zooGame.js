@@ -282,6 +282,12 @@ function chamaPerdeuJogo(){
 	if(animais_completos == 1 || animais_completos == 2){
 		
 		textLose.text = "Que pena! Voce completou so "+animais_completos+" bicho";
+		acentoText = new createjs.Text();
+		acentoText = textLose.clone(true);
+		acentoText.text = ",";
+		acentoText.y = 318;
+		acentoText.x = 547;
+		
 		if(animais_completos == 2){
 			textLose.text += "s";
 		}
@@ -309,7 +315,11 @@ function chamaPerdeuJogo(){
 	ok_bttn.x = 450;
 	underScale(loseGame);
 	loseGame.removeChild(ok_bttn_press);
-	loseGame.addChild(textLose, cursor);
+	loseGame.addChild(textLose);
+	
+	if(animais_completos == 1 || animais_completos == 2) { loseGame.addChild(acentoText);}
+	
+	loseGame.addChild(cursor);
 	
 	ok_bttn.onPress = handleClick; 
 	

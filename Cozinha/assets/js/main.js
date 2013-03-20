@@ -4,7 +4,8 @@ var fpsText;
 
 var pontos;
 var multiplicador = 1;
-var qtdElementos = 20;
+var qtdElementos = 50;
+var gameContainer = new createjs.Container();
 
 function main() {
 	stage = new createjs.Stage(canvas);
@@ -33,7 +34,7 @@ function setupStage(stage) {
 	fpsText = new createjs.Text(null, "bold 36px Arial");
 	fpsText.x = 10;
 	fpsText.y = 10;
-	stage.addChild(fpsText);
+	gameContainer.addChild(fpsText);
 	
 	setaEsquerda = seta.clone(true);
 	setaDireita = seta.clone(true);
@@ -51,12 +52,19 @@ function setupStage(stage) {
 	setasContainer = new createjs.Container();
 	setasContainer.addChild(setaEsquerda, setaDireita);
 	
-	pontos = new createjs.Text("0", "bold 36px Arial");
-	pontos.x = 930;
-	pontos.y = 710;
-	stage.addChild(pontos);
+	pontos = new createjs.Text(0, "bold 36px Arial");
+	pontos.x = canvas.width/2;
+	pontos.y = 620;
+	gameContainer.addChild(pontos);
 	
-	stage.addChild(elementosContainer, setasContainer);
+	multiTxt = new createjs.Text(multiplicador, "bold 36px Arial");
+	multiTxt.x = canvas.width/2 - 300;
+	multiTxt.y = 620;
+	gameContainer.addChild(multiTxt);
+	
+	gameContainer.addChild(elementosContainer, setasContainer);
+	
+	stage.addChild(gameContainer);
 }
 
 function handleChange(event) {

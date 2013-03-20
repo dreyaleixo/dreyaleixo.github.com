@@ -18,11 +18,11 @@ function setupEsteira(qtdElementos) {
 	for(var i = 0; i < qtdElementos; i++) {
 		switch(Math.round(Math.random())) {
 		case 0:
-			esteira.addChild(Circulo = circulo.clone(true));
+			esteira.addChild(circulo.clone(true));
 			break;
 			
 		case 1:
-			esteira.addChild(Triangulo = triangulo.clone(true));
+			esteira.addChild(triangulo.clone(true));
 			break;
 		}
 	}
@@ -49,7 +49,7 @@ function setupEsteira(qtdElementos) {
 	}
 	
 	
-	stage.addChild(esteiraContainer);
+	gameContainer.addChild(esteiraContainer);
 }
 
 function refreshEsteira() {
