@@ -92,6 +92,7 @@ function main() {
 				{src:"assets/images/sheets/seta_Spritesheet.png", id:"seta_Spritesheet"},
 				{src:"assets/bg/bg_titulo.png", id:"bgImg"},
 				{src:"assets/bg/zona_alvo.png", id:"zona_alvo"},
+				{src:"assets/images/ingame/plaquinha.png", id:"plaquinhaAnim"},
 				{src:"assets/images/cursor_combrilho.png", id:"cursor"},
 				{src:"assets/images/cursor_combrilho.png", id:"cursor_img"},
 				{src:"assets/images/mao_aberta.png", id:"mao_aberta_img"},
@@ -161,6 +162,8 @@ function main() {
 				{src:"assets/images/criarBixo/retornar_press.png", id:"retornar_bttn_press"},
 				{src:"assets/images/criarBixo/voltar_btn.png", id:"criarVoltar_bttn"},
 				{src:"assets/images/criarBixo/voltar_press.png", id:"criarVoltar_bttn_press"},
+				{src:"assets/images/criarBixo/Imprimir.png", id:"imprimirFrame"},
+				{src:"assets/images/criarBixo/Salvar.png", id:"salvarFrame"},
 				
 				//Arquivos das telas de Win/Lose
 

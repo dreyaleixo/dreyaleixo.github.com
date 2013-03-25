@@ -1,0 +1,6 @@
+Colocar na pasta
+
+assets/js/
+Da raíz do jogo Zoologico do Patucara
+
+Substituir o antigo.

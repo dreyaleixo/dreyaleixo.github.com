@@ -166,7 +166,12 @@ function handleClick(e){
 			if(ambAtivo == (_dificuldade - 1)) { break; }
 			if((createjs.Tween.hasActiveTweens()) == 0){
 				
-				createjs.Tween.get(moveArea).to({x: ( moveArea.x - 900)}, 1200, createjs.Ease.circOut);
+				createjs.Tween.get(moveArea).to({x: ( moveArea.x - 900)}, 1200, createjs.Ease.circOut).call(poemPlaca);
+				function poemPlaca() {
+					
+					moveArea.addChildAt(plaquinhaAnim, 2);
+					
+				}
 				ambAtivo ++;
 				gerarMontando();
 			}

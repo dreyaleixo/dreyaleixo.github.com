@@ -20,9 +20,7 @@ var patucara;
 var completouAnimal = false;
 var setaScala = false;
 var tempoRestante = 180;
-var gameScaler = 0.05;
-var placaScala = 0.01;
-var animalScala = 0.01;
+var gameScaler = 0.005;
 
 //Containeres do Menu e da interface
 var pauseMenu = new createjs.Container();
@@ -109,12 +107,7 @@ function zooGame(){
 							b,
 							interface_);
 	this.pauseArea.addChild(pauseOverlay, play_bttn);
-	
-	moveArea.addChildAt(plaquinhaAnim, 2);
-	plaquinhaAnim.scaleX = plaquinhaAnim.scaleY = 0.5;
-	
 	underScale(pauseArea);
-	
 	
 	gameNovo();
 	animal_atual.onPress = arrastaMonstro;
@@ -156,9 +149,6 @@ function atualiza(){
 		ambNext.scaleY = 0.44;
 		
 	}
-	
-	plaquinhaAnim.y = alvos_.getChildAt(ambAtivo).y + 10;
-	plaquinhaAnim.x = alvos_.getChildAt(ambAtivo).x + 7;
 	
 	if(completouAnimal){
 		
@@ -224,46 +214,13 @@ function atualiza(){
 			&& alvos_.getChildAt(ambAtivo).getChildAt(1).spriteSheet._images == animal_atual.getChildAt(1).spriteSheet._images
 			&& alvos_.getChildAt(ambAtivo).getChildAt(2).spriteSheet._images == animal_atual.getChildAt(2).spriteSheet._images
 			&& completos_.getChildAt(ambAtivo).ambOrig == -1){
-								moveArea.removeChild(plaquinhaAnim);
-								alvos_.getChildAt(ambAtivo).scaleX = alvos_.getChildAt(ambAtivo).scaleY = 1;
-								plaquinhaAnim.scaleX = plaquinhaAnim.scaleY = 0.44;
 								moveArea.addChild(seta_ss);
 								seta_ss.y = zonasAlvo_.getChildAt(ambAtivo).y;
 								seta_ss.x = zonasAlvo_.getChildAt(ambAtivo).x;
 								if(seta_ss.currentAnimation != "set"){
 									seta_ss.gotoAndPlay("set");
 								}
-				} else { 
-					moveArea.removeChild(seta_ss); 
-					
-					if(!moveArea.contains(plaquinhaAnim)){
-						moveArea.addChildAt(plaquinhaAnim, 2);
-					}
-					
-					if(plaquinhaAnim.scaleX >= 0.64){
-						
-						placaScala = -0.006;
-						
-					} else if(plaquinhaAnim.scaleX <= 0.44){
-						
-						placaScala = 0.006;
-					}
-					
-					if(alvos_.getChildAt(ambAtivo).scaleX >= 1.2){
-						
-						animalScala = -0.01;
-						
-					} else if(alvos_.getChildAt(ambAtivo).scaleX <= 1){
-						
-						animalScala = 0.01;
-					}
-					
-					plaquinhaAnim.scaleX += placaScala;
-					plaquinhaAnim.scaleY += placaScala;
-					alvos_.getChildAt(ambAtivo).scaleX = plaquinhaAnim.scaleX * 2 ;
-					alvos_.getChildAt(ambAtivo).scaleY = plaquinhaAnim.scaleY * 2 ;
-					
-				}
+				} else { moveArea.removeChild(seta_ss); }
 	}
 	
 	//Animacao do Patucara

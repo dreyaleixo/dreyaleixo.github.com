@@ -79,6 +79,10 @@ function initGame_vars(){
 	this.ambNext.rotation = 180;
 	this.ambNext_hit.onClick = handleClick;
 	
+	//Plaquinha animada
+	this.plaquinhaAnim.x = 127;
+	this.plaquinhaAnim.y = 540;
+	
 	//Testando o timer
 	g = new createjs.Graphics();
 	g.beginFill("#ffdb7b");

@@ -27,7 +27,8 @@ function criarBixo_main(){
 	
 	criarArea.x = 0;
 	criarArea.y = 0;
-	frameImprimir.y = 0;
+	imprimirFrame.y = 0;
+	salvarFrame.y = 0;
 	
 	stage.addChild(criarArea);
 	initPos_criar();
@@ -386,8 +387,7 @@ function arrumaAnimal(e){
 						ambCriar,
 						sombra_,
 						animal_atual,
-						cloneAnimal,
-						frameImprimir);
+						cloneAnimal);
 	
 	animal_atual.x = sombra_.x;
 	animal_atual.y = sombra_.y - 50;
@@ -401,11 +401,21 @@ function arrumaAnimal(e){
 	
 	ambCriar.y = 185;
 
-	frameImprimir.scaleX = 0.44;
-	frameImprimir.scaleY = 0.44;
+	if(e == -1){
+
+		salvarFrame.scaleX = 0.44;
+		salvarFrame.scaleY = 0.44;
+		salvarFrame.y += 430;
+		criarArea.addChild(salvarFrame);
+	} else if ( e == 1 ){
+
+		imprimirFrame.scaleX = 0.44;
+		imprimirFrame.scaleY = 0.44;
+		imprimirFrame.y += 430;
+		criarArea.addChild(imprimirFrame);
+	}
 	
 	criarArea.y = -100;
-	frameImprimir.y += 430;
 
 	telaCriar.graphics.beginFill("black").rect(0,0,canvas.width,canvas.height);
 	telaCriar.alpha = 0.01;
