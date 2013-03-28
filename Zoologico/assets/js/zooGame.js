@@ -77,7 +77,7 @@ function zooGame(){
 	completos_.removeAllChildren();
 	_sombras.removeAllChildren();
 	stage.removeAllChildren();
-	interface_.removeAllChildren();
+	
 	gameCaixa.removeAllChildren();
 	ambAtivo = 0;
 	moveArea.x = 0;
@@ -88,6 +88,7 @@ function zooGame(){
 	initSheets();
 	initGame_vars();
 	
+	interface_.removeAllChildren();
 	//Coloca tudo no gameCaixa e instancia eles no stage
 	this.interface_.addChild(headerGame,
 							ambAtivos,
@@ -110,9 +111,6 @@ function zooGame(){
 							interface_);
 	this.pauseArea.addChild(pauseOverlay, play_bttn);
 	
-	moveArea.addChildAt(plaquinhaAnim, 2);
-	plaquinhaAnim.scaleX = plaquinhaAnim.scaleY = 0.5;
-	
 	underScale(pauseArea);
 	
 	
@@ -130,6 +128,9 @@ function zooGame(){
 	
 	animal_atual.onMouseOver = maoCursor_ativa;
 	animal_atual.onMouseOut = maoCursor_desativa;
+
+	moveArea.addChildAt(plaquinhaAnim, 2);
+	plaquinhaAnim.scaleX = plaquinhaAnim.scaleY = 0.5;
 }
 
 //FUNCAO QUE ATUALIZA A CADA TICK DO STAGE, DEFINIDO PELA CLASSE TICKER DO CREATEJS
@@ -177,14 +178,19 @@ function atualiza(){
 			balao_aparece = -0.1;
 		}
 		balao_patu.alpha += balao_aparece;
-		if(balao_patu.alpha < 0){
 		
-			completouAnimal = false;
-			balao_patu.alpha = 0.0001;
+		if(balao_patu.alpha < 0){
+			
+			balao_patu.alpha = 0;
 			
 		}
 		
+	} else if (!completouAnimal){
+
+		interface_.removeChild(ambNext); interface_.removeChild(ambNext_hit);
+		
 	}
+	
 	//Faz o cursor custom seguir o mouse
 	cursor.x = stage.mouseX + cursor.regX - 20;
 	cursor.y = stage.mouseY + cursor.regY - 20;
@@ -223,7 +229,7 @@ function atualiza(){
 		if(alvos_.getChildAt(ambAtivo).getChildAt(0).spriteSheet._images == animal_atual.getChildAt(0).spriteSheet._images
 			&& alvos_.getChildAt(ambAtivo).getChildAt(1).spriteSheet._images == animal_atual.getChildAt(1).spriteSheet._images
 			&& alvos_.getChildAt(ambAtivo).getChildAt(2).spriteSheet._images == animal_atual.getChildAt(2).spriteSheet._images
-			&& completos_.getChildAt(ambAtivo).ambOrig == -1){
+			&& completos_.getChildAt(ambAtivo).ambOrig == -1 && ambAtivo < _dificuldade){
 								moveArea.removeChild(plaquinhaAnim);
 								alvos_.getChildAt(ambAtivo).scaleX = alvos_.getChildAt(ambAtivo).scaleY = 1;
 								plaquinhaAnim.scaleX = plaquinhaAnim.scaleY = 0.44;

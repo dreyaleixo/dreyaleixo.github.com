@@ -202,6 +202,8 @@ function gerarAtual(){
 			animal_atual.rotation = 0;
 		interface_.addChild(animal_atual);
 	}
+	
+	interface_.removeChild(ambNext); interface_.removeChild(ambNext_hit);
 }
 
 //Funcao que vai conferir se as arrays animal_atual e animal_alvo sao iguais, declarando que o animal esta correto
@@ -222,16 +224,20 @@ function confereAnimal(ev){
 				this.animal_atual.onMouseOut = null;
 				completos_.removeChildAt(ambAtivo);
 				completos_.addChildAt(animal_atual, ambAtivo);
-				completouAnimal = true;
+				if(ambAtivo != (_dificuldade - 1 )) {
+					completouAnimal = true;
+				}
 				setaScala = true;
-				if(ambientes_.getChildAt(ambAtivo).ambAnimal != 2
-					&& ambientes_.getChildAt(ambAtivo).ambAnimal != 6
+				if(ambientes_.getChildAt(ambAtivo).ambAnimal != 6
 					&& ambientes_.getChildAt(ambAtivo).ambAnimal != 8){
 					
 						this.sombra_ = sombra_animal.clone();
 						this.sombra_.x = zonasAlvo_.getChildAt(ambAtivo).x;
 						if(ambientes_.getChildAt(ambAtivo).ambAnimal == 1){ this.sombra_.y = zonasAlvo_.getChildAt(ambAtivo).y -5; }
-					
+
+						else if(ambientes_.getChildAt(ambAtivo).ambAnimal == 2){ this.sombra_.x = zonasAlvo_.getChildAt(ambAtivo).x- 10 ;
+																				this.sombra_.y = zonasAlvo_.getChildAt(ambAtivo).y;}
+						
 						else if(ambientes_.getChildAt(ambAtivo).ambAnimal == 7){ this.sombra_.y = zonasAlvo_.getChildAt(ambAtivo).y- 5 ;}
 						
 						else if(ambientes_.getChildAt(ambAtivo).ambAnimal == 3){ this.sombra_.y = zonasAlvo_.getChildAt(ambAtivo).y- 10 ;} 

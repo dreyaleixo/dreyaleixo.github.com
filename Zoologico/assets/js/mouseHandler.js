@@ -163,18 +163,11 @@ function handleClick(e){
 		case "ambNext_hit":
 			som_deslize.stop();
 			som_deslize.play();
-			if(ambAtivo == (_dificuldade - 1)) { break; }
-			if((createjs.Tween.hasActiveTweens()) == 0){
-				
-				createjs.Tween.get(moveArea).to({x: ( moveArea.x - 900)}, 1200, createjs.Ease.circOut).call(poemPlaca);
-				function poemPlaca() {
-					
-					moveArea.addChildAt(plaquinhaAnim, 2);
-					
-				}
+				balao_patu.alpha = 0.0001;
+				completouAnimal = false;
+				createjs.Tween.get(moveArea).to({x: ( moveArea.x - 900)}, 1200, createjs.Ease.circOut).call(onComplete = function(){ moveArea.addChildAt(plaquinhaAnim, 2); });
 				ambAtivo ++;
 				gerarMontando();
-			}
 			interface_.removeChild(ambNext, ambNext_hit);
 		break;
 

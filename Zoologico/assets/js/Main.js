@@ -157,7 +157,7 @@ function main() {
 
 				{src:"assets/images/criarBixo/Avancar_btn.png", id:"avcCriar_bttn"},
 				{src:"assets/images/criarBixo/Avancar_press.png", id:"avcCriar_bttn_press"},
-				{src:"assets/images/criarBixo/Criar meu bicho.png", id:"frameCriar"},
+				{src:"assets/images/criarBixo/Criar_meu_bicho.png", id:"frameCriar"},
 				{src:"assets/images/criarBixo/retornar_btn.png", id:"retornar_bttn"},
 				{src:"assets/images/criarBixo/retornar_press.png", id:"retornar_bttn_press"},
 				{src:"assets/images/criarBixo/voltar_btn.png", id:"criarVoltar_bttn"},
