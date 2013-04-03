@@ -95,7 +95,8 @@ function zooGame(){
 							pause_bttn,
 							duvida_bttn,
 							duvida_hit,
-							crpDown, crpUp, cbaDown, cbaUp, raboDown, raboUp);
+							crpDown, crpUp, cbaDown, cbaUp, raboDown, raboUp,
+							up_pressed, down_pressed);
 	
 	underScale(interface_);
 	this.interface_.addChild(animal_montando,
@@ -124,7 +125,7 @@ function zooGame(){
 	
 	moveArea.addChild(_sombras);
 	moveArea.addChild(completos_);
-	gameCaixa.addChild(cursor);
+	gameCaixa.addChild(cursor, mao_fechada, mao_aberta);
 	
 	animal_atual.onMouseOver = maoCursor_ativa;
 	animal_atual.onMouseOut = maoCursor_desativa;
@@ -194,7 +195,13 @@ function atualiza(){
 	//Faz o cursor custom seguir o mouse
 	cursor.x = stage.mouseX + cursor.regX - 20;
 	cursor.y = stage.mouseY + cursor.regY - 20;
+	mao_fechada.x = stage.mouseX + cursor.regX - 20;
+	mao_fechada.y = stage.mouseY + cursor.regY - 20;
+	mao_aberta.x = stage.mouseX + cursor.regX - 20;
+	mao_aberta.y = stage.mouseY + cursor.regY - 20;
 	cursor.scaleX = cursor.scaleY = 0.7;
+	mao_fechada.scaleX = mao_fechada.scaleY = 0.7;
+	mao_aberta.scaleX = mao_aberta.scaleY = 0.7;
 	
 	//Proibe o Jogador de arrastar animais caso o ambiente atual ja esteja completo.
 	if(completos_.getChildAt(ambAtivo).ambOrig == ambAtivo){
@@ -311,7 +318,13 @@ function pauseAtualiza(){
 	//Faz o cursor custom seguir o mouse
 	cursor.x = stage.mouseX + cursor.regX - 20;
 	cursor.y = stage.mouseY + cursor.regY - 20;
+	mao_fechada.x = stage.mouseX + cursor.regX - 20;
+	mao_fechada.y = stage.mouseY + cursor.regY - 20;
+	mao_aberta.x = stage.mouseX + cursor.regX - 20;
+	mao_aberta.y = stage.mouseY + cursor.regY - 20;
 	cursor.scaleX = cursor.scaleY = 0.7;
+	mao_fechada.scaleX = cursor.scaleY = 0.7;
+	mao_aberta.scaleX = cursor.scaleY = 0.7;
 	
 }
 
@@ -321,7 +334,7 @@ function chamaPerdeuJogo(){
 	
 	loseGame.removeAllChildren();
 	gameCaixa.onTick = null;
-	gameCaixa.removeChild(cursor);
+	gameCaixa.removeChild(cursor, mao_fechada, mao_aberta);
 	loseGame.addChild(pauseOverlay);
 	stage.addChild(loseGame);
 	loseGame.onTick = pauseAtualiza;
@@ -368,7 +381,7 @@ function chamaPerdeuJogo(){
 	
 	if(animais_completos == 1 || animais_completos == 2) { loseGame.addChild(acentoText);}
 	
-	loseGame.addChild(cursor);
+	loseGame.addChild(cursor, mao_fechada, mao_aberta);
 	
 	ok_bttn.onPress = handleClick; 
 	
@@ -381,7 +394,7 @@ function chamaPerdeuJogo(){
 function chamaGanhouLevel(){
 	
 	gameCaixa.onTick = null;
-	gameCaixa.removeChild(cursor);
+	gameCaixa.removeChild(cursor, mao_fechada, mao_aberta);
 	winGame.addChild(pauseOverlay);
 	stage.addChild(winGame);
 	winGame.onTick = pauseAtualiza;
@@ -397,7 +410,7 @@ function chamaGanhouLevel(){
 	nao_bttn.y = 435;
 	underScale(winGame);
 	winGame.removeChild(sim_bttn_press, nao_bttn_press);
-	winGame.addChild(voltaMenu, cursor);
+	winGame.addChild(voltaMenu, cursor, mao_fechada, mao_aberta);
 	voltaMenu.x = 735;
 	voltaMenu.y = 110;
 	

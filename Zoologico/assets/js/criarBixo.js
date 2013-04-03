@@ -44,7 +44,7 @@ function criarBixo_main(){
 	criarInterface.addChild(frameCriar,
 							crpDown, crpUp,
 							cbaDown, cbaUp,
-							raboDown, raboUp,
+							raboDown, raboUp, up_pressed, down_pressed,
 							avcCriar_bttn,
 							avcCriar_bttn_press,
 							retornar_bttn,
@@ -56,7 +56,7 @@ function criarBixo_main(){
 	underScale(criarInterface);
 	criarInterface.removeChild( crpDown, crpUp,
 							cbaDown, cbaUp,
-							raboDown, raboUp,
+							raboDown, raboUp, up_pressed, down_pressed,
 							avcCriar_bttn,
 							avcCriar_bttn_press,
 							retornar_bttn,
@@ -72,7 +72,7 @@ function criarBixo_main(){
 						frameCriar,
 						crpDown, crpUp,
 						cbaDown, cbaUp,
-						raboDown, raboUp,
+						raboDown, raboUp, up_pressed, down_pressed,
 						avcCriar_bttn,
 						retornar_bttn,
 						criarVoltar_bttn,
@@ -85,6 +85,7 @@ function criarBixo_main(){
 			criarInterface);
 	
 	criarArea.onTick = criarAtualiza;
+	up_pressed.alpha = down_pressed.alpha = 0;
 	
 	orgAmbs();
 }

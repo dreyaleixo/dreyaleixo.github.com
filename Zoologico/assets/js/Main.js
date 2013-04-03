@@ -45,8 +45,7 @@ function main() {
 	
 	//Preloader, que sera utilizado para carregar todos os arquivos e instalar o plugin de som
 	preloader = new createjs.PreloadJS();
-	preloader.installPlugin(createjs.Sound);
-	preloader.onFileProgress = handleProgress;
+	preloader.onProgress = handleProgress;
 	preloader.onComplete = handleComplete;
 	preloader.onFileLoad = handleFileLoad;
 	
@@ -94,9 +93,8 @@ function main() {
 				{src:"assets/bg/zona_alvo.png", id:"zona_alvo"},
 				{src:"assets/images/ingame/plaquinha.png", id:"plaquinhaAnim"},
 				{src:"assets/images/cursor_combrilho.png", id:"cursor"},
-				{src:"assets/images/cursor_combrilho.png", id:"cursor_img"},
-				{src:"assets/images/mao_aberta.png", id:"mao_aberta_img"},
-				{src:"assets/images/mao_fechada.png", id:"mao_fechada_img"},
+				{src:"assets/images/mao_aberta.png", id:"mao_aberta"},
+				{src:"assets/images/mao_fechada.png", id:"mao_fechada"},
 				{src:"assets/images/bgmoff_bttn.png", id:"bgmoff_bttn"},
 				{src:"assets/images/bgmon_bttn.png", id:"bgmon_bttn"},
 				{src:"assets/images/bgm_bttn_hit.png", id:"bgm_hit"},

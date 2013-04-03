@@ -3,15 +3,31 @@
  * 				Diego Mucciolo & Andrey Pereira Aleixo
  * 
  */
+var queue = new createjs.LoadQueue();
 
 function preload() {
 	var manifest = [
 	    {src:"assets/img/circulo.png", id:"circulo"},
 	    {src:"assets/img/triangulo.png", id:"triangulo"},
-	    {src:"assets/img/seta_e.png", id:"seta"}
+	    {src:"assets/img/cima.jpg", id:"cima"},
+	    {src:"assets/img/baixo.gif", id:"baixo"},
+	    //Assets das animacoes
+
+	    {src:"assets/img/cenario/ArmarioAberto1.png", id:"aaberto1"},
+	    {src:"assets/img/cenario/ArmarioAberto2.png", id:"aaberto2"},
+	    {src:"assets/img/cenario/FornoAberto1.png", id:"faberto1"},
+	    {src:"assets/img/cenario/FornoAberto2.png", id:"faberto2"},
+	    {src:"assets/img/cenario/GeladeiraAberta1.png", id:"gaberto1"},
+	    {src:"assets/img/cenario/GeladeiraAberta2.png", id:"gaberto2"},
+	    {src:"assets/img/cenario/PiaAberta.png", id:"paberto"},
+	    
+	    //BGs
+	    {src:"assets/img/cenario/Cozinha.png", id:"bg_cozinha"},
+	    //Comidas 
+	    {src:"assets/img/items/comida0001.png", id:"comida1"}
+	    
     ];
 	
-	var queue = new createjs.LoadQueue();
 	queue.addEventListener("fileload", handleFileLoad);
 	queue.addEventListener("complete", handleComplete);
 	queue.loadManifest(manifest);

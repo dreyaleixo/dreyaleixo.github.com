@@ -109,9 +109,14 @@ function handleClick(e){
 		case "raboUp": 
 			som_troca_animal.stop();
 			som_troca_animal.play();
-			e.target.image.src = up_pressed.image.src;
+			up_pressed.x = raboUp.x;
+			up_pressed.y = raboUp.y;
+			raboUp.alpha = 0;
+			up_pressed.alpha = 1;
 			trocaRabo(idxX, 1);
-			e.onMouseUp = function(){ e.target.image.src = crpUp.image.src;};
+			e.onMouseUp = function(){ 
+				raboUp.alpha = 1;
+				up_pressed.alpha = 0;};
 			
 		break;
 
@@ -119,45 +124,70 @@ function handleClick(e){
 		case "raboDown":
 			som_troca_animal.stop();
 			som_troca_animal.play();
-			e.target.image.src = down_pressed.image.src;
+			down_pressed.x = raboDown.x;
+			down_pressed.y = raboDown.y;
+			raboDown.alpha = 0;
+			down_pressed.alpha = 1;
 			trocaRabo(idxX, -1);
-			e.onMouseUp = function(){ e.target.image.src = crpDown.image.src;};
+			e.onMouseUp = function(){ 
+				raboDown.alpha = 1;
+				down_pressed.alpha = 0;};
 		break;
 		
 		//crpUp
 		case "crpUp": 
 			som_troca_animal.stop();
 			som_troca_animal.play();
-			e.target.image.src = up_pressed.image.src;
+			up_pressed.x = crpUp.x;
+			up_pressed.y = crpUp.y;
+			crpUp.alpha = 0;
+			up_pressed.alpha = 1;
 			trocaCorpo(idxY, 1);
-			e.onMouseUp = function(){ e.target.image.src = cbaUp.image.src;};
+			e.onMouseUp = function(){ 
+				crpUp.alpha = 1;
+				up_pressed.alpha = 0;};
 		break;
 		
 		//crpDown
 		case "crpDown": 
 			som_troca_animal.stop();
 			som_troca_animal.play();
-			e.target.image.src = down_pressed.image.src;
+			down_pressed.x = crpDown.x;
+			down_pressed.y = crpDown.y;
+			crpDown.alpha = 0;
+			down_pressed.alpha = 1;
 			trocaCorpo(idxY, -1);
-			e.onMouseUp = function(){ e.target.image.src = cbaDown.image.src;};
+			e.onMouseUp = function(){ 
+				crpDown.alpha = 1;
+				down_pressed.alpha = 0;};
 		break;
 		
 		//cbaUp
 		case "cbaUp": 
 			som_troca_animal.stop();
 			som_troca_animal.play();
-			e.target.image.src = up_pressed.image.src;
+			up_pressed.x = cbaUp.x;
+			up_pressed.y = cbaUp.y;
+			cbaUp.alpha = 0;
+			up_pressed.alpha = 1;
 			trocaCabeca(idxZ, 1);
-			e.onMouseUp = function(){ e.target.image.src = raboUp.image.src;};
+			e.onMouseUp = function(){ 
+				cbaUp.alpha = 1;
+				up_pressed.alpha = 0;};
 		break;
 		
 		//cbaDown
 		case "cbaDown": 
 			som_troca_animal.stop();
 			som_troca_animal.play();
-			e.target.image.src = down_pressed.image.src;
+			down_pressed.x = cbaDown.x;
+			down_pressed.y = cbaDown.y;
+			cbaDown.alpha = 0;
+			down_pressed.alpha = 1;
 			trocaCabeca(idxZ, -1);
-			e.onMouseUp = function(){ e.target.image.src = raboDown.image.src;};
+			e.onMouseUp = function(){ 
+				cbaDown.alpha = 1;
+				down_pressed.alpha = 0;};
 		break;
 		
 		case "ambNext_hit":
@@ -268,7 +298,9 @@ function trocaImagem(e, idx, imgProx){
 //Funcao para mover o animal atual para o stage
 function arrastaMonstro(evt){
 	
-	cursor.image.src = mao_fechada_img.image.src;
+	cursor.alpha = 0;
+	mao_fechada.alpha = 1;
+	mao_aberta.alpha = 0;
 	
 	sons.getChildAt(idxZ).stop();
 	sons.getChildAt(idxZ).play();
@@ -284,7 +316,9 @@ function arrastaMonstro(evt){
 	};
 	
 	evt.onMouseUp = function(ev){
-		cursor.image.src = cursor_img.image.src;
+		cursor.alpha = 1;
+		mao_fechada.alpha = 0;
+		mao_aberta.alpha = 0;
 		p = zonasAlvo_.getChildAt(ambAtivo).globalToLocal(stage.mouseX, stage.mouseY);
 		if(zonasAlvo_.getChildAt(ambAtivo).hitTest(p.x, p.y)){
 			confereAnimal(ev);
@@ -299,13 +333,15 @@ function arrastaMonstro(evt){
 //Funcoes que controlar o cursor personalizado do game
 function maoCursor_ativa(e){
 	
-	cursor.image.src = mao_aberta_img.image.src;
+	cursor.alpha = 0 ;
+	mao_aberta.alpha = 1; 
 	
 }
 
 function maoCursor_desativa(e){
-	
-	cursor.image.src = cursor_img.image.src;
+
+	cursor.alpha = 1;
+	mao_aberta.alpha = 0;
 	
 }
 

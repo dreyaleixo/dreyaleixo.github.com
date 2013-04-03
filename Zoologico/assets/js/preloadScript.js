@@ -47,14 +47,10 @@ function handleFileLoad(event){
 		
 		case createjs.PreloadJS.IMAGE:
 			//Carregou uma imagem
-			var img = new Image();
-			img.src = event.src;
-			img.onload = handleLoadComplete();
-			window[event.id] = new createjs.Bitmap(img);
-			
+			window[event.id] = new createjs.Bitmap(event.result);
 			//centralizando o ponto de registro das imagens (Para ser mais facil o posicionamento no palco)
-			window[event.id].regY = img.height/2;
-			window[event.id].regX = img.width/2;
+			window[event.id].regY = window[event.id].image.height/2;
+			window[event.id].regX = window[event.id].image.width/2;
 			window[event.id].x = canvas.width/2;
 			window[event.id].y = canvas.height/2;
 			window[event.id].id = event.id;

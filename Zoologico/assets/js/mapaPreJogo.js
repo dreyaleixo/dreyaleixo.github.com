@@ -28,7 +28,10 @@ function mapaPreJogo(){
 	mapaArea.addChild(mapa_bg, enterZoo, plaquinha_mapa, bussola);
 	underScale(mapaArea);
 	mapaArea.removeChild(plaquinha_mapa, bussola);
-	stage.addChild(mapaArea, setasMapa, plaquinha_mapa, bussola, cursor);
+	stage.addChild(mapaArea, setasMapa, plaquinha_mapa, bussola, cursor, mao_fechada, mao_aberta);
+	
+	mao_fechada.alpha = 0;
+	mao_aberta.alpha = 0;
 	
 	mapa_bg.onPress = arrastaMapa;
 	mapaArea.x = 0;
@@ -65,7 +68,14 @@ function mapaUpdate(){
 	
 	cursor.x = stage.mouseX + cursor.regX - 20;
 	cursor.y = stage.mouseY + cursor.regY - 20;
+	mao_fechada.x = stage.mouseX + cursor.regX - 20;
+	mao_fechada.y = stage.mouseY + cursor.regY - 20;
+	mao_aberta.x = stage.mouseX + cursor.regX - 20;
+	mao_aberta.y = stage.mouseY + cursor.regY - 20;
+	
 	cursor.scaleX = cursor.scaleY = 0.7;
+	mao_fechada.scaleX = mao_fechada.scaleY = 0.7;
+	mao_aberta.scaleX = mao_aberta.scaleY = 0.7;
 	if(mapaArea.x >= 450){
 		mapaArea.x = 450;
 		setasMapa.removeChild(ambPrev);
@@ -106,7 +116,8 @@ function mapaUpdate(){
 //Funcao que eh chamada para arrastar o mapa
 function arrastaMapa(e){
 	
-	cursor.image.src = mao_fechada_img.image.src;
+	cursor.alpha = 0;
+	mao_fechada.alpha = 1;
 
 	var offset = { x : mapaArea.x - e.stageX };
 
@@ -123,7 +134,8 @@ function arrastaMapa(e){
 		};
 	
 	e.onMouseUp = function(ev){
-		cursor.image.src = cursor_img.image.src;
+		cursor.alpha = 1;
+		mao_fechada.alpha = 0;
 	};
 	
 }

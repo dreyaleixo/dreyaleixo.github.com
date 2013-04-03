@@ -114,6 +114,9 @@ function initGame_vars(){
 	this.cbaDown.x = canvas.width/2 + 70;
 	this.cbaDown.y = 175;
 	
+	up_pressed.alpha = 0;
+	down_pressed.alpha = 0;
+	
 	//Xzinho das telas de Win e Lose que sao usados para voltar ao menu
 	voltaMenu = new createjs.Shape();
 	voltaMenu.graphics.beginFill("black").rect(0,0,50,50);
