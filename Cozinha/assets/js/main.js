@@ -28,6 +28,8 @@ function main() {
 
 }
 
+
+
 function update() {
 	// FPS
 	fpsText.text = Math.round(createjs.Ticker.getMeasuredFPS());
@@ -80,22 +82,24 @@ function setupStage(stage) {
 	multiTxt.y = 620;
 	gameContainer.addChild(multiTxt);
 	
-	gameContainer.addChild(faberto1, gaberto1, aaberto1, elementosContainer);
+	gameContainer.addChild(faberto1, gaberto1, aaberto1, paberto1, elementosContainer);
 	gaberto1.x = 190; gaberto2.x = 218;
 	faberto1.x = 743; faberto2.x = 750;
 	aaberto1.x = 530; aaberto2.x = 525; 
-	paberto.x = 440;
+	paberto1.x = 440; paberto2.x = 439;
 	
 	gaberto1.y = 463.5; gaberto2.y = 443.5;
 	faberto1.y = 583.5; faberto2.y = 561.5;
 	aaberto1.y = 139.5; aaberto2.y = 129.5; 
-	paberto.y = 444.5;
+	paberto1.y = 444.5; paberto2.y = 543;
 	
 	faberto1.alpha = faberto2.alpha = 0;
 	gaberto1.alpha = gaberto2.alpha = 0;
 	aaberto1.alpha = aaberto2.alpha = 0;
-	paberto.alpha = 0;
+	paberto1.alpha = 0; paberto2.alpha = 0;
 	
+	aaberto3.x = 531.5;
+	aaberto3.y = 46.5;
 	stage.addChild(gameContainer);
 }
 
@@ -103,11 +107,3 @@ function handleChange(event) {
 	alert("ok");
 }
 
-Function.prototype.context = function(ctx) {
-	
-	var self = this;
-	return function() {
-		self.apply(ctx);
-	}
-	
-}
