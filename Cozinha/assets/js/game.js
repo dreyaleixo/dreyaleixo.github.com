@@ -189,8 +189,8 @@ Comidas.prototype.initialize = function(num, lado){
 
 Comidas.prototype.handle_key = function(key)
 {
-	
-		switch(key.target.keyCode) {
+		
+		switch(key.target) {
 		
 		
 		//ESQUERDA

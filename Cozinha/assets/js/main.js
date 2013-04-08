@@ -25,9 +25,8 @@ function main() {
 			setupTicker(update);	
 			
 	createjs.Touch.enable(stage);
-
+	stage.onPress = clickStage;
 }
-
 
 
 function update() {

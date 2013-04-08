@@ -14,7 +14,7 @@ var contC = 0, contB = 0, contE = 0, contD = 0;
 
 document.onkeydown = function(e) {
 	
-	keyboard.dispatchEvent("keydown",e);
+	keyboard.dispatchEvent("keydown",e.keyCode);
 	
 };
 
@@ -31,6 +31,53 @@ keyboardHandler.prototype.initialize = function(){
 	
 	
 };
+
+//Funcao que disponibiliza a funcao de touch pra portateis
+function clickStage(e){
+
+	x = e.stageX;
+	y = e.stageY; 
+	console.log(e);
+	
+	e.onMouseUp = function(e){
+		newx = x - e.stageX;
+		newy = y - e.stageY;
+		newax = Math.abs(newx);
+		neway = Math.abs(newy);
+		
+		console.log(e);
+		
+		if(newax > neway){
+			
+			if(newx > 0){
+				var e = [];
+				e.target = 37;
+				Comidas.prototype.handle_key(e);
+				
+			} else if(newx < 0){
+				var e = [];
+				e.target = 39;
+				Comidas.prototype.handle_key(e);
+				
+			}
+			
+		} else if(newax < neway){
+			
+			if(newy > 0){
+				var e = [];
+				e.target = 38;
+				Comidas.prototype.handle_key(e);
+				
+			} else if(newy < 0){
+				var e = [];
+				e.target = 40;
+				Comidas.prototype.handle_key(e);
+				
+			}
+			
+		}
+	};
+}
 
 keyboard = new keyboardHandler();
 
