@@ -1,0 +1,17 @@
+body {
+	
+	position: relative;
+	width: 640px;
+	height: 920px;
+	font-family: Helvetica;
+	font-size: 12px;
+	background-repeat: no-repeat;
+	
+}
+
+textarea {
+	
+    resize: none;
+    border: none;
+    
+}

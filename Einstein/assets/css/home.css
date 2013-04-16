@@ -1,0 +1,82 @@
+body {
+	
+	background-image: url('../home/0.0_Home_v1.png');
+	
+}
+
+#login {
+	
+	font-size: 40px;
+	position: absolute;
+	top: 417px;
+	left: 148px;
+	
+}
+
+#senha {
+	
+	font-size: 40px;
+	position:absolute;
+	top: 528px;
+	left: 148px;
+	
+}
+
+#entrar {
+	
+	width:171px;
+	height:58px;
+	background-image:url('../home/entrar_btn.png');
+	position: absolute;
+	left: 415px;
+	top: 610px;
+	
+}
+
+#entrar:active{
+	
+	background-image:url('../home/entrar_press.png');
+	
+}
+
+#sombra {
+	
+	background-image: url('../home/erro/Sombra.png');
+	width:640px;
+	height:920px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	z-index: 900;
+	
+}
+
+#erro {
+	
+	background-image: url('../home/erro/0.0_Home_erro_v1.png');
+	width:640px;
+	height:920px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	z-index: 901;
+	
+}
+
+#fechar_erro {
+	
+	background-image: url('../home/erro/fechar_btn.png');
+	width:72px;
+	height:72px;
+	top: 375px;
+	left: 550px;
+	position: absolute;
+	z-index: 902;
+	
+}
+
+#fechar_erro:active {
+	
+	background-image: url('../home/erro/fechar_press.png');
+	
+}

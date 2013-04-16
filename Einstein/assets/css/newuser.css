@@ -1,0 +1,44 @@
+#header {
+	
+	background-image: url('../default/Background.png');
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:640px;
+	height:920px;
+	
+}
+
+#cadastrar{
+	
+	background-image: url('../newuser/cadastrar_btn.png');
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:640px;
+	height:920px;
+	
+}
+
+#cadastrar:active{
+	
+	background-image: url('../newuser/cadastrar_press.png');
+	
+}
+
+#oi_user {
+	
+	font-size: 26px;
+	position: relative;
+	top: 245px;
+	text-align: right;
+	margin-right: 20px;
+	
+}
+
+#username {
+	
+	color: #07A;
+	text-decoration: underline;
+	
+}

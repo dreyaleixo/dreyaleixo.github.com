@@ -1,0 +1,40 @@
+body {
+	
+	background-image: url('../home/0.0_Home_v1.png');
+	
+}
+
+#login {
+	
+	font-size: 40px;
+	position: relative;
+	top: 419px;
+	left: 148px;
+	
+}
+
+#senha {
+	
+	font-size: 40px;
+	position: relative;
+	top: 470px;
+	left: 148px;
+	
+}
+
+#entrar {
+	
+	width:171px;
+	height:58px;
+	background-image:url('../home/entrar_btn.png');
+	position: relative;
+	left: 415px;
+	top: 495px;
+	
+}
+
+#entrar:active{
+	
+	background-image:url('../home/entrar_press.png');
+	
+}
