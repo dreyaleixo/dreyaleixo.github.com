@@ -1,22 +1,24 @@
 #header {
 	
 	background-image: url('../default/Background.png');
-	position:absolute;
-	top:0px;
-	left:0px;
-	width:640px;
-	height:920px;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 640px;
+	height: 275px;
 	
 }
 
 #cadastrar{
 	
+	
 	background-image: url('../newuser/cadastrar_btn.png');
-	position:absolute;
-	top:0px;
-	left:0px;
-	width:640px;
-	height:920px;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	width: 640px;
+	height: 110px;
+	background-position-y: 110px;
 	
 }
 
@@ -30,7 +32,7 @@
 	
 	font-size: 26px;
 	position: relative;
-	top: 245px;
+	top: 226px;
 	text-align: right;
 	margin-right: 20px;
 	
@@ -42,3 +44,386 @@
 	text-decoration: underline;
 	
 }
+
+#usuarios {
+	
+	background-image: url('../default/usuarios_press.png');
+	
+	width: 214px;
+	height: 111px;
+	position: absolute;
+	top: 275px;
+	left: 425px;
+}
+
+#new_noti {
+	
+	background-image: url('../default/novanotificacao_btn.png');
+	
+	width: 214px;
+	height: 98px;
+	position: absolute;
+	top: 275px;
+	left: 214px;
+}
+
+#notis {
+	
+	background-image: url('../default/notificacoes_btn.png');
+	width: 214px;
+	height: 98px;
+	position: absolute;
+	top: 275px;
+	
+}
+
+#user_container {
+	
+position: absolute;
+top: 372px;
+z-index:-1;
+	
+}
+
+.users {
+	width: 640px;
+	height: 168px;
+	position: relative;
+	background-image: url('../default/linhaDivisoria.png');
+	background-repeat: no-repeat;
+	background-position-y: 164px;
+}
+
+.settings_user {
+	bottom: 39px;
+	position: relative;
+}
+
+.sombra_overlay {
+	
+	background-image: url('../default/base.png');
+	height: 167px;
+}
+
+.apagar_btn {
+	
+	background-image: url('../default/tap/apagar_btn.png');
+	width: 102px;
+	height: 103px;
+	position: relative;
+	bottom: 245px;
+	left: 335px;
+}
+
+.apagar_btn:active {
+	
+	background-image: url('../default/tap/apagar_press.png');
+}
+
+.editar_btn {
+	
+	background-image: url('../default/tap/editar_btn.png');
+	width: 81px;
+	height: 100px;
+	position: relative;
+	bottom: 145px;
+	left: 200px;
+}
+
+.editar_btn:active {
+	
+	background-image: url('../default/tap/editar_press.png');
+}
+
+.nome-user {
+	
+	font-size: 34px;
+	position: relative;
+	top: 50px;
+	left: 30px;
+	
+}
+
+.cargo-user {
+	
+	font-size: 16px;
+	
+}
+
+.email-user {
+	
+	position: relative;
+	right: 328px;
+	top: 85px;
+	font-size: 17px;
+	
+}
+
+#apagar {
+	background-image: url("../notificacoes/apagar/1.3_Notificacoes_apagar_v1.png");
+	
+width: 640px;
+height: 920px;
+position: fixed;
+z-index: 901;
+}
+
+
+#sim_apagar {
+	background-image: url("../botoes/sim_btn.png");
+	
+z-index: 902;
+width: 171px;
+height: 58px;
+position: fixed;
+top: 485px;
+left: 140px;
+}
+
+#nao_apagar {
+	background-image: url("../botoes/nao_btn.png");
+	
+width: 171px;
+height: 58px;
+position: fixed;
+z-index: 902;
+top: 485px;
+left: 330px;
+}
+
+#sim_apagar:active {
+	background-image: url("../botoes/sim_press.png");
+}
+
+#nao_apagar:active {
+	background-image: url("../botoes/nao_press.png");
+}
+
+#bg_newuser {
+background-image: url('../newuser/3.1_Usuarios_Novo_v1.png');
+width: 640px;
+height: 920px;
+position: fixed;
+z-index: 901;
+}
+
+#bg_edituser {
+background-image: url('../newuser/4.0_ConfigurarUsuario_v2.png');
+width: 640px;
+height: 920px;
+position: fixed;
+z-index: 901;
+}
+
+#nuser_name {
+	
+top: 219px;
+position: fixed;
+left: 190px;
+font-size: 32px;
+height: 38px;
+}
+
+#nuser_login {
+top:310px;
+position: fixed;
+left: 190px;
+font-size: 32px;
+height: 38px;
+	
+}
+
+#nuser_email {
+	
+position: fixed;
+left: 190px;
+font-size: 32px;
+height: 38px;
+top:400px;
+}
+
+#nuser_senha {
+	
+position: fixed;
+top: 491px;
+left: 309px;
+width: 273px;
+font-size: 32px;
+height: 38px;
+}
+
+#nuser_senha2 {
+	
+position: fixed;
+top: 579px;
+left: 309px;
+width: 273px;
+font-size: 32px;
+height: 38px;
+}
+
+#user_usuario{
+	
+width: 50px;
+height: 50px;
+position: absolute;
+bottom: 200px;
+left: 181px;
+background-repeat: no-repeat;
+background-position-x: 6px;
+background-position-y: 6px;
+}
+
+#user_adm {
+		
+width: 50px;
+height: 50px;
+position: absolute;
+bottom: 200px;
+left: 366px;
+background-repeat: no-repeat;
+background-position-x: 6px;
+background-position-y: 6px;
+}
+
+#euser_usuario{
+	
+width: 50px;
+height: 50px;
+position: absolute;
+bottom: 144px;
+left: 181px;
+background-repeat: no-repeat;
+background-position-x: 6px;
+background-position-y: 6px;
+}
+
+#euser_adm {
+		
+width: 50px;
+height: 50px;
+position: absolute;
+bottom: 144px;
+left: 366px;
+background-repeat: no-repeat;
+background-position-x: 6px;
+background-position-y: 6px;
+}
+
+#incluir_user {
+	
+background-image: url('../newuser/incluir_btn.png');
+width: 231px;
+height: 57px;
+z-index: 902;
+position: absolute;
+top: 790px;
+left: 200px;
+}
+
+#incluir_user:active {
+	
+	background-image: url('../newuser/incluir_press.png');
+}
+
+#fexa_newuser {
+	background-image: url('../home/erro/fechar_btn.png');
+	position: absolute;
+	width: 68px;
+	height: 67px;
+	top: 0px;
+	right: 0px;
+}
+
+#fexa_newuser:active {
+	background-image: url('../home/erro/fechar_press.png');
+	
+}
+
+#euser_name {
+	
+top: 185px;
+position: fixed;
+left: 190px;
+font-size: 32px;
+height: 38px;
+}
+
+#euser_login {
+top:275px;
+position: fixed;
+left: 190px;
+font-size: 32px;
+height: 38px;
+	
+}
+
+#euser_email {
+	
+position: fixed;
+left: 190px;
+font-size: 32px;
+height: 38px;
+top:365px;
+}
+
+#euser_senha {
+	
+position: fixed;
+top: 456px;
+left: 309px;
+width: 273px;
+font-size: 32px;
+height: 38px;
+}
+
+#euser_senha2 {
+	
+position: fixed;
+top: 544px;
+left: 309px;
+width: 273px;
+font-size: 32px;
+height: 38px;
+}
+
+#euser_oldsenha {
+	
+position: fixed;
+top: 637px;
+left: 309px;
+width: 273px;
+font-size: 32px;
+height: 38px;
+}
+
+#salvar_user {
+	
+background-image: url('../botoes/salvar_btn.png');
+width: 231px;
+height: 57px;
+z-index: 902;
+position: absolute;
+top: 820px;
+left: 200px;
+}
+
+#salvar_user:active {
+	
+	background-image: url('../botoes/salvar_press.png');
+}
+
+#fexa_edituser {
+	background-image: url('../home/erro/fechar_btn.png');
+	position: absolute;
+	width: 68px;
+	height: 67px;
+	top: 0px;
+	right: 0px;
+}
+
+#fexa_edituser:active {
+	background-image: url('../home/erro/fechar_press.png');
+	
+}
+

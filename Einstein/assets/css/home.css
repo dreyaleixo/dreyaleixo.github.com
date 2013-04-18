@@ -39,18 +39,6 @@ body {
 	
 }
 
-#sombra {
-	
-	background-image: url('../home/erro/Sombra.png');
-	width:640px;
-	height:920px;
-	top: 0px;
-	left: 0px;
-	position: absolute;
-	z-index: 900;
-	
-}
-
 #erro {
 	
 	background-image: url('../home/erro/0.0_Home_erro_v1.png');

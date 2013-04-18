@@ -1,29 +1,125 @@
 <!DOCTYPE html>
-<htmlxmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="chrome=1">
-		<title>Home</title>
+		<title>Notificacoes</title>
 		<script src="assets/js/jquery-1.9.1.min.js"></script>
-		<script src="assets/js/home.js"></script>
+		<script src="assets/js/notificacoes.js"></script>
 		
 		<link rel="stylesheet" type="text/css" href="assets/css/base.css" />
-		<link rel="stylesheet" type="text/css" href="assets/css/home.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/notificacoes.css" />
 		<!--[if IE]>
 		<link rel="stylesheet" type="text/css" href="assets/css/base_ie.css" />
 		![endif]-->
 	</head>
 	<body onload="onLoad();">
 			
-			<textarea id='login' rows='1' cols='17'></textarea>
-			<textarea id='senha' rows='1' cols='17'></textarea>
-			<div id='entrar'></div>
+			<div id='header'>
+				<div id='oi_user'>Olá, <span id='username'>default</span>.</div>
+				<div id='usuarios'></div>
+				<div id='new_noti'></div>
+				<div id='notis'></div>
+			</div>
 			
-			<!-- Parte que gerencia a janela de Erro -->
-			
+				
+				<!-- Apagar User -->
+				<div class='apagar_user' style='display:none'>
+					<div id='apagar'></div>
+					<div id='sim_apagar'></div>
+					<div id='nao_apagar'></div>
+				</div>
+				<!-- // -->
+				
+				<!-- Novo User -->
+				<div class='new_user' style='display:none'>
+					<div id='bg_newuser'>
+						<div style='z-index=902'>
+							<textarea id='nuser_name'></textarea>
+							<textarea id='nuser_login'></textarea>
+							<textarea id='nuser_email'></textarea>
+							<textarea id='nuser_senha'></textarea>
+							<textarea id='nuser_senha2'></textarea>
+							<div id='fexa_newuser'></div>
+							<div id='user_usuario'></div>
+							<div id='user_adm'></div>
+							<div id='incluir_user'></div>
+						</div>
+					</div>
+
+				</div>
+				<!-- // -->
+				
+				<!-- Editar User -->
+				<div class='editar_user' style='display:none'>
+					<div class='edit_user'>
+						<div id='bg_edituser'>
+							<div style='z-index=902'>
+								<textarea id='edit_titulo-noti'></textarea>
+								<textarea id='edit_txt-noti'></textarea>
+								<div style="height: 595px; overflow: scroll;position: absolute;top: 175px;left: 23px;width: 594px;">
+									<div id="bg2-edit-noti"></div>
+									<textarea id='titulo-noti-edit'></textarea>
+									<div id='img-selecionada'>
+										<div id='troca-img'></div>
+										<div id='tira-img'></div>
+									</div>
+									<textarea id='link-edit'></textarea>
+									<textarea id='texto-noti-edit'></textarea>
+									<textarea id='data-expira'></textarea>
+								</div>
+								<div id='fexa_editnoti'></div>
+								<div id='salvar_noti'></div>
+							</div>
+						</div>
+	
+					</div>
+				</div>
+				<!-- // -->
+				
+				<!-- Sucesso Criar User -->
+				<div class='criar_sucesso' style='display:none'>
+				
+				</div>
+				<!-- // -->
+				
 			<div id='sombra' style="display: none;"></div>
-			<div id='erro' style="display: none;"></div>
-			<div id ='fechar_erro' style="display: none;"></div>
+				
+				
+				
+				
+				<!-- Parte que demonstra uma div de usuario -->
+					<div id='noti_container'>
+					
+						<!-- ESSA EH UMA DIV DE EXEMPLO DOS USUARIOS VINI, ELA PODE SER COPIADA QUANTAS VEZES NECESSARIO, A UNICA COISA QUE ESSE CODIGO LINDO NAO FAZ EH LAVAR A ROUPA -->
+						<div class='users'>
+							
+							<div id='id_user'>
+								<!-- <img class='img_noti' src="assets/notificacoes/Sample_W243XH147.png">
+								<span class='noti-titulo'>Default Defaultus </span>
+								<span class='noti-txt'>defautls@def.defcom</span> -->
+								
+								<div> 
+									<img style="float:left;margin:15px;" src="assets/notificacoes/Sample_W243XH147.png">
+									<p class='noti-titulo'>Default Defaultus </p>
+									<span class='noti-txt'> Dia tal, ultima fucada as 16:20h </span>
+								</div>
+								
+								<div class='bg_noti'></div>
+								<div style=' display:none; 'class='settings_user'>
+									<div class='sombra_overlay'></div>
+									<div class='editar_btn'></div>
+									<div class='apagar_btn'></div>
+									<div class='visualizar_btn'></div>
+									<div class='publicar_btn'></div>
+								</div>
+							</div>
+						</div>
+				
+						</div>
+						
+					</div>
+				<!-- End divs dos usuarios existentes -->
 			
 	</body>
 </html>

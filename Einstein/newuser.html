@@ -15,12 +15,99 @@
 	</head>
 	<body onload="onLoad();">
 			
-			<div id='header'></div>
-			
+			<div id='header'>
 				<div id='oi_user'>Olá, <span id='username'>default</span>.</div>
 				<div id='usuarios'></div>
 				<div id='new_noti'></div>
 				<div id='notis'></div>
+			</div>
+			
+				
+				<!-- Apagar User -->
+				<div class='apagar_user' style='display:none'>
+					<div id='apagar'></div>
+					<div id='sim_apagar'></div>
+					<div id='nao_apagar'></div>
+				</div>
+				<!-- // -->
+				
+				<!-- Novo User -->
+				<div class='new_user' style='display:none'>
+					<div id='bg_newuser'>
+						<div style='z-index=902'>
+							<textarea id='nuser_name'></textarea>
+							<textarea id='nuser_login'></textarea>
+							<textarea id='nuser_email'></textarea>
+							<textarea id='nuser_senha'></textarea>
+							<textarea id='nuser_senha2'></textarea>
+							<div id='fexa_newuser'></div>
+							<div id='user_usuario'></div>
+							<div id='user_adm'></div>
+							<div id='incluir_user'></div>
+						</div>
+					</div>
+
+				</div>
+				<!-- // -->
+				
+				<!-- Editar User -->
+				<div class='editar_user' style='display:none'>
+					<div class='edit_user'>
+						<div id='bg_edituser'>
+							<div style='z-index=902'>
+								<textarea id='euser_name'></textarea>
+								<textarea id='euser_login'></textarea>
+								<textarea id='euser_email'></textarea>
+								<textarea id='euser_oldsenha'></textarea>
+								<textarea id='euser_senha'></textarea>
+								<textarea id='euser_senha2'></textarea>
+								<div id='euser_usuario'></div>
+								<div id='euser_adm'></div>
+								<div id='fexa_edituser'></div>
+								<div id='salvar_user'></div>
+							</div>
+						</div>
+	
+					</div>
+				</div>
+				<!-- // -->
+				
+				<!-- Sucesso Criar User -->
+				<div class='criar_sucesso' style='display:none'>
+				
+				</div>
+				<!-- // -->
+				
+			<div id='sombra' style="display: none;"></div>
+				
+				
+				
+				
+				<!-- Parte que demonstra uma div de usuario -->
+					<div id='user_container'>
+					
+						<!-- ESSA EH UMA DIV DE EXEMPLO DOS USUARIOS VINI, ELA PODE SER COPIADA QUANTAS VEZES NECESSARIO, A UNICA COISA QUE ESSE CODIGO LINDO NAO FAZ EH LAVAR A ROUPA -->
+						<div class='users'>
+							
+							<div id='id_user'>
+							
+								<span class='nome-user'>Default Defaultus 
+									<span class='cargo-user'>(defaultador)</span>
+								</span>
+								<span class='email-user'>defautls@def.defcom</span>
+								<div style=' display:none; 'class='settings_user'>
+									<div class='sombra_overlay'></div>
+									<div class='editar_btn'></div>
+									<div class='apagar_btn'></div>
+								</div>
+							</div>
+						</div>
+						
+						
+				
+						
+					</div>
+				<!-- End divs dos usuarios existentes -->
 				
 			<div id='cadastrar'></div>
 			
