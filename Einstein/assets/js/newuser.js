@@ -141,5 +141,53 @@ function onLoad(){
 		$('#user_adm').css("background-image", "none");
 		
 	});
+	
+	//PARTE DO SCRIPT DO NOVA rNOTI
+	$('#fexa_novanoti').click(function(){
+		
+		$('#sombra2').show();
+		$('.certeza_cancelar').show();
+	});
+	
+	$('#newpublicar-agora').click(function(){
+		
+		$('#sombra').hide();
+		$('.nova_noti').hide();
+		
+	});
+
+	$('#salvar_novanoti').click(function(){
+	
+	$('#sombra').hide();
+	$('.nova_noti').hide();
+	
+	});
+	
+	$('#new_noti').click(function(){
+		
+		$('#sombra').show();
+		$('.nova_noti').show();
+		
+		});
+	
+
+	//Confirmou o apagamento
+	$('#sim_cancel').click(function(){
+		
+		$('#sombra').hide();
+		$('.editar_noti').hide();
+		$('#sombra2').hide();
+		$('.certeza_cancelar').hide();
+		$('.nova_noti').hide();
+		
+	});
+	
+	//Confirmou o apagamento
+	$('#nao_cancel').click(function(){
+		
+		$('#sombra2').hide();
+		$('.certeza_cancelar').hide();
+		
+	});
 }
 

@@ -1,5 +1,6 @@
-body {
+#conteudo_paginas {
 	
+	/*background-image: url('../default/BaseBrowser_v1_005a9b.png');*/
 	position: relative;
 	max-width: 640px;
 	max-height: 920px;
@@ -26,7 +27,256 @@ textarea {
 	height:920px;
 	top: 0px;
 	left: 0px;
-	position: absolute;
+	position: fixed;
 	z-index: 900;
 	
 }
+
+#sombra2 {
+	
+	background-image: url('../home/erro/Sombra.png');
+	width:640px;
+	height:920px;
+	top: 0px;
+	left: 0px;
+	position: fixed;
+	z-index:  1000;
+	
+}
+
+#titulo-noti{
+position: absolute;
+top: 30px;
+left: 170px;
+font-size: 19px;
+z-index: 902;
+width: 392px;
+}
+
+#img-selecionada{
+width: 243px;
+height: 147px;
+position: absolute;
+top: 150px;
+z-index: 902;
+left: 165px;
+}
+
+#troca-img {
+	background-image: url('../notificacoes/editar/atualizar_btn.png');
+width: 61px;
+height: 61px;
+position: absolute;
+top: 41px;
+z-index: 902;
+left: 52px;
+
+	
+}
+
+#tira-img{ 
+	background-image: url('../notificacoes/editar/remover_btn.png');
+	
+width: 61px;
+height: 61px;
+position: absolute;
+top: 41px;
+left: 135px;
+z-index: 902;
+}
+
+#link-edit-new {
+	
+position: absolute;
+top: 326px;
+left: 168px;
+z-index: 902;
+font-size: 19px;
+width: 395px;
+	
+}
+
+#texto-noti-new {
+position: absolute;
+top: 415px;
+left: 169px;
+z-index: 902;
+font-size: 19px;
+width: 393px;
+height: 177px;
+}
+
+#fexa_novanoti {
+	background-image: url('../home/erro/fechar_btn.png');
+	position: absolute;
+	width: 68px;
+z-index: 902;
+	height: 67px;
+	top: 34px;
+	right: 0px;
+}
+
+
+#bg2-nova-noti {
+	background-image: url('../notificacoes/editar/conteudo.png');
+	width:548px;
+	height: 722px;
+	position: relative;
+z-index: 902;
+	top: 25px;
+	left: 25px;
+	background-repeat: no-repeat;
+	
+}
+
+#fexa_novanoti:active {
+	background-image: url('../home/erro/fechar_press.png');
+	
+}
+
+#bg_novanoti {
+	background-image: url('../notificacoes/nova_noti/2.0_NovaNotificacao_v3.png');
+	width:640px;
+	height: 920px;
+	position: relative;
+z-index: 902;
+	top: 0px;
+	left: 0px;
+	background-repeat: no-repeat;
+	
+}
+
+#salvar_novanoti {
+	
+background-image: url('../botoes/salvar_btn.png');
+width: 231px;
+height: 57px;
+z-index: 902;
+position: absolute;
+top: 790px;
+left: 75px;
+}
+
+#salvar_novanoti:active {
+	
+	background-image: url('../botoes/salvar_press.png');
+}
+
+#newpublicar-agora{ 
+	background-image: url('../botoes/publicaragora_btn.png');
+
+position: absolute;
+top: 790px;
+left: 345px;
+width: 231px;
+z-index: 902;
+height: 58px;
+}
+
+#newpublicar-agora:active{ 
+	background-image: url('../botoes/publicaragora_press.png');
+
+}
+
+#data-expira-new{
+position: absolute;
+top: 665px;
+z-index: 902;
+left: 168px;
+font-size: 19px;
+width: 393px;
+}
+
+#cancel_noti {
+	background-image: url('../notificacoes/nova_noti/2.0_NovaNotificacao_cancelar_v1.png');
+	width:640px;
+	height:920px;
+	
+position: fixed;
+z-index: 1001;
+top: 0px;
+}
+
+#sim_cancel {
+	background-image: url("../botoes/sim_btn.png");
+	
+z-index: 1001;
+width: 171px;
+height: 58px;
+position: fixed;
+top: 485px;
+left: 140px;
+}
+
+#nao_cancel {
+	background-image: url("../botoes/nao_btn.png");
+	
+width: 171px;
+height: 58px;
+position: fixed;
+z-index: 1001;
+top: 485px;
+left: 330px;
+}
+
+#sim_cancel:active {
+	background-image: url("../botoes/sim_press.png");
+}
+
+#nao_cancel:active {
+	background-image: url("../botoes/nao_press.png");
+}
+
+#fexa_erro_info {
+	background-image: url('../home/erro/fechar_btn.png');
+position: absolute;
+width: 68px;
+height: 73px;
+top: 366px;
+right: 17px;
+z-index: 901;
+}
+
+#fexa_erro_info:active {
+	background-image: url('../home/erro/fechar_press.png');
+}
+
+
+#info_error {
+background-image: url('../notificacoes/2.0_NovaNotificacao_erro_v1.png');
+width: 640px;
+height: 920px;
+position: fixed;
+z-index: 901;
+}
+
+#container_{
+position: absolute;
+top: 290px;
+margin-top: 200px;
+width: 100%;
+left: 50%;
+}
+#content_ {
+width: 640px;
+margin-left: -320px;
+margin-right: auto;
+height: 920px;
+position: relative;
+}
+
+#wireframe {
+	
+	background-image: url('../default/BaseBrowser_v1_005a9b.png');
+	position: relative;
+	font-family: Helvetica;
+	font-size: 12px;
+background-position: 50% 0%;
+	background-repeat: no-repeat;
+	margin:0;
+	padding:0;
+	border:0;
+	
+}
+
+

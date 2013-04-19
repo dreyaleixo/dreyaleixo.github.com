@@ -13,8 +13,8 @@
 		<link rel="stylesheet" type="text/css" href="assets/css/base_ie.css" />
 		![endif]-->
 	</head>
-	<body onload="onLoad();">
-			
+	<body onload="onLoad();" id='conteudo_paginas'>
+			<div style="margin-left:auto;margin-right:auto;top:200px;position:absolute">
 			<div id='header'>
 				<div id='oi_user'>Olá, <span id='username'>default</span>.</div>
 				<div id='usuarios'></div>
@@ -24,39 +24,33 @@
 			
 				
 				<!-- Apagar User -->
-				<div class='apagar_user' style='display:none'>
+				<div class='apagar_noti' style='display:none'>
 					<div id='apagar'></div>
 					<div id='sim_apagar'></div>
 					<div id='nao_apagar'></div>
 				</div>
 				<!-- // -->
 				
-				<!-- Novo User -->
-				<div class='new_user' style='display:none'>
-					<div id='bg_newuser'>
-						<div style='z-index=902'>
-							<textarea id='nuser_name'></textarea>
-							<textarea id='nuser_login'></textarea>
-							<textarea id='nuser_email'></textarea>
-							<textarea id='nuser_senha'></textarea>
-							<textarea id='nuser_senha2'></textarea>
-							<div id='fexa_newuser'></div>
-							<div id='user_usuario'></div>
-							<div id='user_adm'></div>
-							<div id='incluir_user'></div>
-						</div>
-					</div>
-
+				<!-- Certeza de Cancelar tudo ai ? -->
+				<div class='certeza_cancelar' style='display:none'>
+					<div id='cancel_noti'></div>
+					<div id='sim_cancel'></div>
+					<div id='nao_cancel'></div>
 				</div>
 				<!-- // -->
 				
-				<!-- Editar User -->
-				<div class='editar_user' style='display:none'>
-					<div class='edit_user'>
-						<div id='bg_edituser'>
+				<!-- TA FALTANDO INFORMARO JOW, N DA PRA CRIAR NOTIFICACOES ASSIM -->
+				<div class='error_noti' style='display:none'>
+					<div id='info_error'></div>
+					<div id='fexa_erro_info'></div>
+				</div>
+				<!-- // -->
+				
+				<!-- Editar Noti -->
+				<div class='editar_noti' style='display:none'>
+					<div class='edit_noti'>
+						<div id='bg_editnoti'>
 							<div style='z-index=902'>
-								<textarea id='edit_titulo-noti'></textarea>
-								<textarea id='edit_txt-noti'></textarea>
 								<div style="height: 595px; overflow: scroll;position: absolute;top: 175px;left: 23px;width: 594px;">
 									<div id="bg2-edit-noti"></div>
 									<textarea id='titulo-noti-edit'></textarea>
@@ -70,6 +64,7 @@
 								</div>
 								<div id='fexa_editnoti'></div>
 								<div id='salvar_noti'></div>
+								<div id='publicar-agora'></div>
 							</div>
 						</div>
 	
@@ -77,14 +72,45 @@
 				</div>
 				<!-- // -->
 				
-				<!-- Sucesso Criar User -->
-				<div class='criar_sucesso' style='display:none'>
+				 <!-- PARTE QUE DEVE SER INSERIDA EM TODAS AS PAGINAS -->
+				<!-- nova Noti -->
+				<div class='nova_noti' style='display:none'>
+					<div class='new_noti'>
+						<div id='bg_novanoti'>
+							<div style='z-index=902'>
+								<div style="height: 595px; overflow: scroll;position: absolute;top: 175px;left: 23px;width: 594px;">
+									<div id="bg2-nova-noti"></div>
+									<textarea id='titulo-noti'></textarea>
+									<div id='img-selecionada2'>
+										<div id='troca-img2'></div>
+										<div id='tira-img2'></div>
+									</div>
+									<textarea id='link-edit-new'></textarea>
+									<textarea id='texto-noti-new'></textarea>
+									<textarea id='data-expira-new'></textarea>
+								</div>
+								<div id='fexa_novanoti'></div>
+								<div id='salvar_novanoti'></div>
+								<div id='newpublicar-agora'></div>
+							</div>
+						</div>
+	
+					</div>
+				</div>
+				<!-- // -->
 				
+				<!-- Exibir Noti -->
+				<div class='exibeNoti' style='display:none'>
+					<div id='bg_exibe_noti'>
+						
+					</div>
+					<div id='fexa-exibe-noti'></div>
+					
 				</div>
 				<!-- // -->
 				
 			<div id='sombra' style="display: none;"></div>
-				
+			<div id='sombra2' style="display: none;"></div>
 				
 				
 				
@@ -92,34 +118,34 @@
 					<div id='noti_container'>
 					
 						<!-- ESSA EH UMA DIV DE EXEMPLO DOS USUARIOS VINI, ELA PODE SER COPIADA QUANTAS VEZES NECESSARIO, A UNICA COISA QUE ESSE CODIGO LINDO NAO FAZ EH LAVAR A ROUPA -->
-						<div class='users'>
+						<div class='notifica'>
 							
-							<div id='id_user'>
-								<!-- <img class='img_noti' src="assets/notificacoes/Sample_W243XH147.png">
-								<span class='noti-titulo'>Default Defaultus </span>
-								<span class='noti-txt'>defautls@def.defcom</span> -->
+							<div id='id_noti'>
 								
 								<div> 
-									<img style="float:left;margin:15px;" src="assets/notificacoes/Sample_W243XH147.png">
+									<img style="float:left;position: relative;margin:15px;" src="assets/notificacoes/Sample_W243XH147.png">
 									<p class='noti-titulo'>Default Defaultus </p>
 									<span class='noti-txt'> Dia tal, ultima fucada as 16:20h </span>
 								</div>
 								
 								<div class='bg_noti'></div>
-								<div style=' display:none; 'class='settings_user'>
-									<div class='sombra_overlay'></div>
-									<div class='editar_btn'></div>
-									<div class='apagar_btn'></div>
-									<div class='visualizar_btn'></div>
-									<div class='publicar_btn'></div>
+								<div style=' display:none; 'class='settings_noti'>
+									<div class='sombra_overlay'>
+										<div class='botao-container'>
+											<div class='visualizar_btn'></div>
+											<div class='publicar_btn'></div>
+											<div class='editar_btn'></div>
+											<div class='apagar_btn'></div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
-				
-						</div>
+					
 						
 					</div>
+						
 				<!-- End divs dos usuarios existentes -->
-			
+			</div>
 	</body>
 </html>

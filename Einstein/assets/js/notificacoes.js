@@ -1,13 +1,13 @@
-var user_mod;
+var noti_mod;
 
 //Funcao carregada quando a pagina completa o download
 function onLoad(){
 	
 	//Clicar nos nomes dos usuarios
-	$('.users').click(function (){
+	$('.notifica').click(function (){
 		
-		$('.settings_user').hide();
-		$(this).children().children('.settings_user').show();
+		$('.settings_noti').hide();
+		$(this).children().children('.settings_noti').show();
 		
 	});
 	
@@ -15,24 +15,57 @@ function onLoad(){
 	$('.editar_btn').click(function(){
 		
 		$('#sombra').show();
-		$('.editar_user').show();
+		$('.editar_noti').show();
 		
 	});
 	
-	//Botao de fecharo Editar usuario
-	$('#fexa_edituser').click(function(){
+	//Botao de fecharo Editar noti
+	$('#fexa_editnoti').click(function(){
+		
+		$('#sombra2').show();
+		$('.certeza_cancelar').show();
+	});
+	
+	//Confirmou o apagamento
+	$('#sim_cancel').click(function(){
 		
 		$('#sombra').hide();
-		$('.editar_user').hide();
+		$('.editar_noti').hide();
+		$('#sombra2').hide();
+		$('.certeza_cancelar').hide();
+		$('.nova_noti').hide();
 		
 	});
 	
+	//Confirmou o apagamento
+	$('#nao_cancel').click(function(){
+		
+		$('#sombra2').hide();
+		$('.certeza_cancelar').hide();
+		
+	});
+	
+	//Botao de fechar a janela de erro
+	$('#fexa_erro_info').click(function(){
+		
+		$('#sombra').hide();
+		$('.error_noti').hide();
+		
+	});
+	
+	//Botao de fecharo Visualizar noti
+	$('#fexa-exibe-noti').click(function(){
+		
+		$('#sombra').hide();
+		$('.exibeNoti').hide();
+		
+	});
 	//Botao de salvar o Editar o usuario
-	$('#salvar_user').click(function(){
+	$('#salvar_noti').click(function(){
 		
 		$('#sombra').hide();
-		$('.editar_user').hide();
-		//CODIGO PARA ALTERAR O USUARIO AQUI
+		$('.editar_noti').hide();
+		//CODIGO PARA ALTERAR O NOTI AQUI
 	});
 	
 	
@@ -40,7 +73,7 @@ function onLoad(){
 	$('.apagar_btn').click(function(){
 		
 		$('#sombra').show();
-		$('.apagar_user').show();
+		$('.apagar_noti').show();
 		
 	});
 	
@@ -48,79 +81,71 @@ function onLoad(){
 	$('#sim_apagar').click(function(){
 		
 		$('#sombra').hide();
-		$('.apagar_user').hide();
-		//CODIGOS PARA APAGAR O USUARIO
+		$('.apagar_noti').hide();
+		//CODIGOS PARA APAGAR A NOTI
 		
 	});
+	
+	//Clickou em Visualizar
+	$('.visualizar_btn').click(function(){
+		
+		$('#sombra').show();
+		$('.exibeNoti').show();
+	});
+	
 	
 	//Cancelou o apagamento
 	$('#nao_apagar').click(function(){
 		
 		$('#sombra').hide();
-		$('.apagar_user').hide();
-		//CODIGO PRA DELETAR O USUARIO AQUI
+		$('.apagar_noti').hide();
 		
 	});
 	
 	//botao Nova notificavao
 	$('#new_noti').click(function(){
 		
-		//LINK PARA A PAGINA de NOVAS notificacoes
+		$('#sombra').show();
+		$('.nova_noti').show();
 		
 	});
 
 	//botao notificacoes
-	$('#notis').click(function(){
+	$('#usuarios').click(function(){
 	
-		//LINKS PARA A PAGINA DE NOTIFICACOES
+		//LINKS PARA A PAGINA DE USUARIOS
+		
 		
 	});
 	
-	//vini muito loko, esse botao eh o de cadastro.
-	$('#cadastrar').click(function(){
+	//PARTE DO SCRIPT DO NOVA rNOTI
+	$('#fexa_novanoti').click(function(){
+		
+		$('#sombra2').show();
+		$('.certeza_cancelar').show();
+		
+	});
+	
+	$('#newpublicar-agora').click(function(){
+		
+		$('#sombra').hide();
+		$('.nova_noti').hide();
+		
+	});
+
+	$('#salvar_novanoti').click(function(){
+	
+	$('#sombra').hide();
+	$('.nova_noti').hide();
+	
+	});
+	
+	$('#new_noti').click(function(){
 		
 		$('#sombra').show();
-		$('.new_user').show();
+		$('.nova_noti').show();
 		
-	});
+		});
 	
-	//Dentro do cadastro, esse eh o botao do radio USUARIO, modificado na variavel user_mod
-	$('#user_usuario').click(function(){
-		
-		$('#user_adm').css("background-image", "none");
-		$('#user_usuario').css("background-image", "url('assets/newuser/selecao.png')");
-		user_mod = 1;
-		
-	});
-	
-	//Dentro do cadastro, esse eh o botao do radio ADM, modificado na variavel user_mod
-	$('#user_adm').click(function(){
-		
-		$('#user_usuario').css("background-image", "none");
-		$('#user_adm').css("background-image", "url('assets/newuser/selecao.png')");
-		user_mod = 2;
-		
-		
-	});
-	
-	//E esse eh o botao que eh apertado quando se conclui o cadastro.
-	$('#incluir_user').click(function(){
-		
-		$('#sombra').hide();
-		$('.new_user').hide();
-		$('#user_usuario').css("background-image", "none");
-		$('#user_adm').css("background-image", "none");
-		//CODIGO PRA GERAR UM ADM NERDAO OU UM USUARIO MTO LOKO AQUI
-	});
-	
-	//Botao que fexa a janela de noso Usuario
-	$('#fexa_newuser').click(function(){
-		
-		$('#sombra').hide();
-		$('.new_user').hide();
-		$('#user_usuario').css("background-image", "none");
-		$('#user_adm').css("background-image", "none");
-		
-	});
 }
 

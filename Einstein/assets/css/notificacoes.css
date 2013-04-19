@@ -59,10 +59,15 @@
 	
 }
 
+.notifica {
+position: relative;
+clear:both;
+height: 198px;
+}
 #noti_container {
 	
 position: absolute;
-top: 372px;
+top: 172px;
 height:548px;
 z-index:-1;
 	
@@ -88,7 +93,7 @@ left: 30px;
 
 }
 
-.settings_user {
+.settings_noti {
 	bottom: 135px;
 	position: relative;
 	height: 231px;
@@ -106,8 +111,8 @@ left: 30px;
 	width: 102px;
 	height: 103px;
 	position: relative;
-	bottom: 275px;
-	left: 505px;
+float: left;
+margin: 25px;
 }
 
 .apagar_btn:active {
@@ -121,8 +126,8 @@ left: 30px;
 	width: 108px;
 	height: 100px;
 	position: relative;
-	bottom: 477px;
-	left: 220px;
+float: left;
+margin: 25px;
 }
 
 .publicar_btn:active {
@@ -136,8 +141,8 @@ left: 30px;
 	width: 135px;
 	height: 100px;
 	position: relative;
-	left: 34px;
-	bottom: 373px;
+float: left;
+margin: 25px;
 }
 
 .visualizar_btn:active {
@@ -151,8 +156,8 @@ left: 30px;
 	width: 81px;
 	height: 100px;
 	position: relative;
-	bottom: 173px;
-	left: 372px;
+float: left;
+margin: 25px;
 }
 
 
@@ -183,6 +188,7 @@ width: 640px;
 height: 920px;
 position: fixed;
 z-index: 901;
+top: 0px;
 }
 
 
@@ -216,148 +222,17 @@ left: 330px;
 	background-image: url("../botoes/nao_press.png");
 }
 
-#bg_edituser {
+
+
+#bg_editnoti {
 background-image: url('../notificacoes/editar/1.2_Notificacoes_editar_v3.png');
 width: 640px;
 height: 920px;
 position: fixed;
 z-index: 901;
+top: 0px;
 }
 
-#nuser_name {
-	
-top: 219px;
-position: fixed;
-left: 190px;
-font-size: 32px;
-height: 38px;
-}
-
-#nuser_login {
-top:310px;
-position: fixed;
-left: 190px;
-font-size: 32px;
-height: 38px;
-	
-}
-
-#nuser_email {
-	
-position: fixed;
-left: 190px;
-font-size: 32px;
-height: 38px;
-top:400px;
-}
-
-#nuser_senha {
-	
-position: fixed;
-top: 491px;
-left: 309px;
-width: 273px;
-font-size: 32px;
-height: 38px;
-}
-
-#nuser_senha2 {
-	
-position: fixed;
-top: 579px;
-left: 309px;
-width: 273px;
-font-size: 32px;
-height: 38px;
-}
-
-#incluir_user {
-	
-background-image: url('../newuser/incluir_btn.png');
-width: 231px;
-height: 57px;
-z-index: 902;
-position: absolute;
-top: 790px;
-left: 200px;
-
-}
-
-#incluir_user:active {
-	
-	background-image: url('../newuser/incluir_press.png');
-}
-
-#fexa_newuser {
-	background-image: url('../home/erro/fechar_btn.png');
-	position: absolute;
-	width: 68px;
-	height: 67px;
-	top: 34px;
-	right: 0px;
-}
-
-#fexa_newuser:active {
-	background-image: url('../home/erro/fechar_press.png');
-	
-}
-
-#euser_name {
-	
-top: 219px;
-position: fixed;
-left: 190px;
-font-size: 32px;
-height: 38px;
-}
-
-#euser_login {
-top:310px;
-position: fixed;
-left: 190px;
-font-size: 32px;
-height: 38px;
-	
-}
-
-#euser_email {
-	
-position: fixed;
-left: 190px;
-font-size: 32px;
-height: 38px;
-top:400px;
-}
-
-#euser_senha {
-	
-position: fixed;
-top: 491px;
-left: 309px;
-width: 273px;
-font-size: 32px;
-height: 38px;
-}
-
-#euser_senha2 {
-	
-position: fixed;
-top: 579px;
-left: 309px;
-width: 273px;
-font-size: 32px;
-height: 38px;
-}
-
-#euser_oldsenha {
-	
-position: fixed;
-top: 670px;
-left: 309px;
-width: 273px;
-font-size: 32px;
-height: 38px;
-}
 
 #salvar_noti {
 	
@@ -365,12 +240,12 @@ background-image: url('../botoes/salvar_btn.png');
 width: 231px;
 height: 57px;
 z-index: 902;
-position: absolute;
+position: fixed;
 top: 790px;
 left: 75px;
 }
 
-#salvar_user:active {
+#salvar_noti:active {
 	
 	background-image: url('../botoes/salvar_press.png');
 }
@@ -383,6 +258,8 @@ left: 75px;
 	top: 34px;
 	right: 0px;
 }
+
+
 
 #bg2-edit-noti {
 	background-image: url('../notificacoes/editar/conteudo.png');
@@ -399,4 +276,116 @@ left: 75px;
 	background-image: url('../home/erro/fechar_press.png');
 	
 }
+
+#fexa-exibe-noti {
+	background-image: url('../home/erro/fechar_btn.png');
+position: relative;
+width: 68px;
+height: 67px;
+top: 52px;
+z-index: 902;
+left: 555px;
+}
+
+#fexa-exibe-noti:active {
+	background-image: url('../home/erro/fechar_press.png');
+	
+}
+
+#titulo-noti-edit{
+position: absolute;
+top: 30px;
+left: 170px;
+font-size: 19px;
+width: 392px;
+}
+
+#img-selecionada{
+width: 243px;
+height: 147px;
+position: absolute;
+top: 150px;
+left: 165px;
+}
+
+#troca-img {
+	background-image: url('../notificacoes/editar/atualizar_btn.png');
+width: 61px;
+height: 61px;
+position: absolute;
+top: 41px;
+left: 52px;
+
+	
+}
+
+#tira-img{ 
+	background-image: url('../notificacoes/editar/remover_btn.png');
+	
+width: 61px;
+height: 61px;
+position: absolute;
+top: 41px;
+left: 135px;
+}
+
+#link-edit {
+	
+position: absolute;
+top: 326px;
+left: 168px;
+font-size: 19px;
+width: 395px;
+	
+}
+
+#texto-noti-edit {
+position: absolute;
+top: 415px;
+left: 169px;
+font-size: 19px;
+width: 393px;
+height: 177px;
+}
+
+#data-expira{
+position: absolute;
+top: 665px;
+left: 168px;
+font-size: 19px;
+width: 393px;
+}
+
+#publicar-agora{ 
+	background-image: url('../botoes/publicaragora_btn.png');
+
+position: fixed;
+top: 790px;
+left: 345px;
+width: 231px;
+height: 58px;
+}
+
+#publicar-agora:active{ 
+	background-image: url('../botoes/publicaragora_press.png');
+
+}
+
+#bg_exibe_noti {
+	background-image: url('../notificacoes/1.1_Notificacoes_visualizar_v1.png');
+	width:640px;
+	height:920px;
+	
+position: fixed;
+z-index: 901;
+top: 0px;
+}
+
+.botao-container{
+position: absolute;
+top: 30px;
+}
+
+
+
 
