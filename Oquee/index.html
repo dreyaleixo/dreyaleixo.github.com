@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>  
+		<meta charset="utf-8">
+		<title>O que é, o que é?</title>
+		
+		<link href="css/styles.css" type="text/css" rel="stylesheet" media="screen">
+		
+		<script type="text/javascript" src="js/underscore-min.js"></script>
+		<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="js/modernizr.js"></script>
+		
+		<script type="text/javascript" src="js/easeljs-0.6.0.min.js"></script>
+		<script type="text/javascript" src="js/preloadjs-0.3.0.min.js"></script>
+		<script type="text/javascript" src="js/soundjs-0.4.0.min.js"></script>
+		
+		<script type="text/javascript" src="js/coffee-script.js"></script>
+
+		<script type="text/coffeescript">
+			window.Game = {}
+		</script>
+		<script type="text/coffeescript" src="coffee/data/Data.coffee"></script>
+		<script type="text/coffeescript" src="coffee/Input.coffee"></script>
+		<script type="text/coffeescript" src="coffee/Audio.coffee"></script>
+		<script type="text/coffeescript" src="coffee/Preloader.coffee"></script>
+		<script type="text/coffeescript" src="coffee/Button.coffee"></script>
+		<script type="text/coffeescript" src="coffee/ToggleButton.coffee"></script>
+		<script type="text/coffeescript" src="coffee/Popup.coffee"></script>
+		
+		<script type="text/coffeescript" src="coffee/Menu.coffee"></script>
+		<script type="text/coffeescript" src="coffee/MenuPlayButton.coffee"></script>
+		<script type="text/coffeescript" src="coffee/MenuHelpButton.coffee"></script>
+		
+		<script type="text/coffeescript" src="coffee/Help.coffee"></script>
+		<script type="text/coffeescript" src="coffee/HelpPlayButton.coffee"></script>
+		<script type="text/coffeescript" src="coffee/HelpNextButton.coffee"></script>
+		<script type="text/coffeescript" src="coffee/HelpPrevButton.coffee"></script>
+		
+		<script type="text/coffeescript" src="coffee/Level.coffee"></script>
+		<script type="text/coffeescript" src="coffee/Score.coffee"></script>
+		<script type="text/coffeescript" src="coffee/Question.coffee"></script>
+		<script type="text/coffeescript" src="coffee/Sylabe.coffee"></script>
+		<script type="text/coffeescript" src="coffee/Placeholder.coffee"></script>
+		<script type="text/coffeescript" src="coffee/Timer.coffee"></script>
+		<script type="text/coffeescript" src="coffee/SideButtons.coffee"></script>
+		<script type="text/coffeescript" src="coffee/HintButton.coffee"></script>
+		<script type="text/coffeescript" src="coffee/NextLevelButton.coffee"></script>
+		<script type="text/coffeescript" src="coffee/Stickers.coffee"></script>
+		<script type="text/coffeescript" src="coffee/PopupVictory.coffee"></script>
+		<script type="text/coffeescript" src="coffee/PopupHint.coffee"></script>
+		<script type="text/coffeescript" src="coffee/PopupDefeat.coffee"></script>
+
+		<script type="text/coffeescript" src="coffee/End.coffee"></script>
+		<script type="text/coffeescript" src="coffee/EndPlayAgainButton.coffee"></script>
+
+		<script type="text/coffeescript" src="coffee/SylabeQuiz.coffee"></script>
+		
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<meta name="robots" content="" />
+
+		<script type="text/javascript" src="js/SylabeQuiz.js"></script>
+		
+        <script type="text/javascript">
+          window.analytics_game_name = "oqueeoquee"
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-30071506-3']);
+          _gaq.push(['_trackPageview', 'jogo/' + analytics_game_name + '/inicio']);
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+        
+        </script>
+		
+	</head>
+
+	<body>
+		<div id="loader">
+		    <div class="indicator">
+		        <img src="img/loading-text-animated.gif" />
+		    </div>
+		</div>
+		<div id="container">
+			<canvas id="main" width="900" height="675"> Canvas not supported :/ </canvas>
+		</div>
+	</body>
+
+</html>
